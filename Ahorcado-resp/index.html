@@ -1,23 +1,14 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<Module>
-  <ModulePrefs title="Your App Name">
-    <Require feature="rpc"/>
-    <Require feature="views"/>
-  </ModulePrefs>
-  <Content type="html">
-    <![CDATA[
-
-      <!-- PRODUCCION
-      <script src="//talkgadget.google.com/hangouts/_/api/hangout.js?v=1.2"></script>
-      -->
-      <!-- DESARROLLO -->
-      <script src="//hangoutsapi.talkgadget.google.com/hangouts/_/api/hangout.js?v=1.2"></script>
-
-      <link rel="stylesheet" type="text/css" href="https://raw.github.com/gelypam/HangoutTest/master/Ahorcado-resp/css/estilos.css" />  
-      <script type="text/javascript" src="https://raw.github.com/gelypam/HangoutTest/master/Ahorcado-resp/js/jquery-1.7.1.min.js"></script>
-      <script type="text/javascript" src="https://raw.github.com/gelypam/HangoutTest/master/Ahorcado-resp/js/funciones.js"></script>
-
-      <!-- application code -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset=utf-8>
+	<title>Juego de ahorcado</title>
+	<link rel="stylesheet" type="text/css" href="css/estilos.css" />
+	<script type="text/javascript" src="http://localhost:8080/socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="js/funciones.js"></script>
+</head>
+<body>
 	<div class="principal">
 		<div class="JuegoAhorcado">
 			<div>
@@ -57,6 +48,5 @@
 			<input type="hidden" id="palabra" value="0">
 		</div>
 	</div>
-    ]]>
-  </Content>
-</Module>
+</body>
+</html>
