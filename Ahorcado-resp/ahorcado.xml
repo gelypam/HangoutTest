@@ -20,7 +20,14 @@
       <!-- application code -->
       <div class="principal">
       <div class="JuegoAhorcado">
-        
+        <div>
+          <h1>Instrucciones:</h1>
+          <h3>El ahorcado es un juego cuyo objetivo es adivinar una palabra o frase.</h3>
+          <h3>El jugador deber&aacute; ir diciendo letras que podr&iacute;an estar en la palabra.</h3>
+          <h3>Si acierta, se escriben todas las letras coincidentes. Si la letra no est&aacute;, se le a&ntilde;ade un elemento al cuerpo del mu&ntilde;eco.</h3>
+          <h3>Se gana el juego si se completa la frase, y se pierde si se completa el cuerpo antes de terminar la frase.</h3>
+        </div>
+        <h5>Jugar!</h5>
         <div class="ContenedorJuego">
           <div id="Pregunta"></div>
           <div class="ColumnaUno">
