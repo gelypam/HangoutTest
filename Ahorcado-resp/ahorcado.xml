@@ -13,9 +13,9 @@
       <!-- DESARROLLO -->
       <script src="//hangoutsapi.talkgadget.google.com/hangouts/_/api/hangout.js?v=1.2"></script>
 
-      <link rel="stylesheet" type="text/css" href="https://raw.github.com/gelypam/HangoutTest/master/css/estilos.css" />  
-      <script type="https://raw.github.com/gelypam/HangoutTest/master/js/jquery-1.7.1.min.js"></script>
-      <script type="text/javascript" src="https://raw.github.com/gelypam/HangoutTest/master/js/funciones.js"></script>
+      <link rel="stylesheet" type="text/css" href="https://raw.github.com/gelypam/HangoutTest/master/Ahorcado-resp/css/estilos.css" />  
+      <script type="https://raw.github.com/gelypam/HangoutTest/master/Ahorcado-resp/js/jquery-1.7.1.min.js"></script>
+      <script type="text/javascript" src="https://raw.github.com/gelypam/HangoutTest/master/Ahorcado-resp/js/funciones.js"></script>
 
       <!-- application code -->
       <div class="principal">
