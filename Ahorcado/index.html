@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset=utf-8>
+	<title>Juego de ahorcado</title>
+	<link rel="stylesheet" type="text/css" href="css/estilos.css" />
+	<script type="text/javascript" src="http://localhost:8080/socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+	<script type="text/javascript" src="js/funciones.js"></script>
+</head>
+<body>
+	<div class="principal">
+		<div class="JuegoAhorcado">
+			<div class="ContenedorJuego">
+				<div id="Pregunta" class="Pregunta"></div>
+				<div class="ColumnaUno">
+					<div id="ContenedorAbecedario" class="ContenedorAbecedario">
+						<ul class="Azul" id="letras"></ul>
+					</div>
+					<div class="Palabra" id="Palabra"></div>
+				</div>
+				<div class="ColumnaDos">
+					<div id="monito" class="ContenedorAhorcado">
+						<div id="cabeza" class="Cabeza_" style="display:none;"></div>
+						<div id="brazoizquierdo" class="BrazoIzquierdo_" style="display:none;"></div>
+						<div id="tronco" class="Tronco_" style="display:none;"></div>
+						<div id="brazoderecho" class="BrazoDerecho_" style="display:none;"></div>
+						<div id="pieizquierdo" class="PieIzquierdo_" style="display:none;"></div>
+						<div id="piederecho" class="PieDerecho_" style="display:none;"></div>
+					</div>
+				</div>
+			</div>
+			<div id="resultado" class="Resultado" style="display:none;"></div>	
+		</div>
+	</div>
+</body>
+</html>
