@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+  <ModulePrefs title="HangMan MSICU">
+    <Require feature="rpc"/>
+    <Require feature="views"/>
+  </ModulePrefs>
+  <Content type="html">
+    <![CDATA[
+<!DOCTYPE html>
+<style type="text/css">
+@import url(http://fonts.googleapis.com/css?family=Paprika);
+/*Mapa Conceptual
+html,body {
+  font-family: sans-serif;
+  font-size: 10px; 
+  background-color: white;
+  background-image: url("../img/grid.gif");
+  background-size: 24px 24px;
+  image-rendering: -moz-crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;
+}*/
+
+#root {
+  display: block;
+}
+
+ul, li {
+  display: block;
+  float: left;
+}
+.menu { 
+  
+}
+#canvas { 
+  /*width: auto; */
+  width: 850px;
+}
+
+#container {
+  position: relative; /* needed for footer positioning*/
+  height: auto !important;
+  min-height: 100%;
+}
+
+#canvas-container {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+}
+
+#drawing-area {
+  position: absolute;
+  background-color: white;
+  background-image: url("../img/grid.gif");
+  background-size: 24px 24px;
+  /* need this for webkit as well. */
+  image-rendering: -moz-crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;
+}
+
+li .content {
+  border: 2px solid #2CA8DF;
+  height: 45px;
+  width: 80px;
+  display: block;
+  overflow: hidden;
+  margin: 5px auto;
+}
+
+input {
+  border : none;
+  color: #2CA8DF;
+  /*font-size: 20px;*/
+  margin: 0 auto;
+  text-align: left;
+  size: 25px;
+}
+
+input:focus{
+ background-color: transparent;
+ color: #2CA8DF;
+}
+
+#encabezado{
+  /*font-family: sans-serif;
+  font-size: 20px; conform with jquery-ui em settings */
+  color: gray;
+  background-color: white;
+  text-align: center;
+}
+
+a:link {color:#000000;} 
+</style>
+ 
+
+      <script src="//hangoutsapi.talkgadget.google.com/hangouts/_/api/hangout.js?v=1.2"></script>
+
+      <link rel="stylesheet" type="text/css" href="https://raw.github.com/gelypam/HangoutTest/master/css/estilos.css" />  
+      <script type="text/javascript" src="https://raw.github.com/CharlyMcFly/downloads/master/mapaConceptos5/js/knockout-2.1.0.js"></script>
+
+      <!-- application code -->
+  <div class="principal">
+      <!--<div id="canvas-container" style="height: 2000px;">
+          <div id="drawing-area" class="no-select" style="width: 1000px; height: 2000px;">-->
+            <script type="text/html" id="node">
+          <li>
+              <div class="content">
+              <div class="menu">
+                <a href="#" data-bind="click: addNode">+</a>
+                <a href="#" data-bind="click: deleteNode">-</a>
+              </div>
+              <!--<div data-bind="text: content"></div>-->
+              <input type="text" id="nodo" name="nodo" data-bind="text:content"/>
+            </div>
+          <ul data-bind="template: { name: 'node', foreach: children }">
+          </ul>
+          <!-- /ko -->
+          </li>
+          </script>
+          <!--</div>
+          <div id="encabezado">
+            Mapa Conceptual
+          </div>-->
+          <div id="canvas">
+          <ul id="root" data-bind="template: { name: 'node', data: root }">
+          </ul>
+        </div>
+      </div>
+      <script type="text/javascript">
+      function Node(content, parent) {
+        var self = this;
+        self.content = ko.observable(content);
+        self.top = ko.computed(function() {
+
+          return parent ? parent.top() + 100 : 0;
+        }, self);  
+        self.left = ko.computed(function() {
+          return parent ? parent.left() + parent.children().length * 100 : 0;
+        }, self);
+        self.children = ko.observableArray();
+        self.addNode = function() {
+          self.children.push(new Node('New Node ' + new Date(), self) );
+          var nodo = document.getElementById('nodo');
+              nodo.focus();
+        }
+
+        self.deleteNode = function() {
+          parent.children.remove(self);
+        }
+      }
+
+      var app = {
+        root: new Node('Idea Principal')
+      };
+
+      
+      ko.applyBindings(app);
+      var root = document.getElementById('root');
+          root.focus();
+    </script>
+    
+    ]]>
+  </Content>
+</Module>
