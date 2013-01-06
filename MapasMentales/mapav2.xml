@@ -19,11 +19,11 @@
 <meta name="keywords" content="mind maps html5 mindmaps offline easy intuitive" />
 <meta name="google" content="notranslate"/>
 <title>Factores Humanos Mapas Conceptuales</title>
-<link rel="icon" type="image/png" href="img/favicon.png" />
-<link rel="stylesheet" href="css/common.css">
-<link rel="stylesheet" href="css/app.css">
-<link rel="stylesheet" href="css/Aristo/jquery-ui-1.8.7.custom.css" />
-<link rel="stylesheet" href="css/minicolors/jquery.miniColors.css">
+<link rel="icon" type="image/png" href="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/img/favicon.png" />
+<link rel="stylesheet" href="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/css/common.css">
+<link rel="stylesheet" href="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/css/app.css">
+<link rel="stylesheet" href="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/css/Aristo/jquery-ui-1.8.7.custom.css" />
+<link rel="stylesheet" href="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/css/minicolors/jquery.miniColors.css">
 
 <script id="template-float-panel" type="text/x-jquery-tmpl">
 <div class="ui-widget ui-dialog ui-corner-all ui-widget-content float-panel no-select">
@@ -242,54 +242,54 @@
   <!-- /DEBUG -->
 
   <!-- JS:LIB:BEGIN -->
-  <script src="js/libs/jquery-ui-1.8.11.custom.min.js"></script>
-  <script src="js/libs/dragscrollable.js"></script>
-  <script src="js/libs/jquery.hotkeys.js"></script>
-  <script src="js/libs/jquery.mousewheel.js"></script>
-  <script src="js/libs/jquery.minicolors.js"></script>
-  <script src="js/libs/jquery.tmpl.js"></script>
-  <script src="js/libs/swfobject.js"></script>
-  <script src="js/libs/downloadify.min.js"></script>
-  <script src="js/libs/events.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/libs/jquery-ui-1.8.11.custom.min.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/libs/dragscrollable.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/libs/jquery.hotkeys.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/libs/jquery.mousewheel.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/libs/jquery.minicolors.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/libs/jquery.tmpl.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/libs/swfobject.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/libs/downloadify.min.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/libs/events.js"></script>
 
-  <script src="js/MindMaps.js"></script>
-  <script src="js/Command.js"></script>
-  <script src="js/CommandRegistry.js"></script>
-  <script src="js/Action.js"></script>
-  <script src="js/Util.js"></script>
-  <script src="js/Point.js"></script>
-  <script src="js/Document.js"></script>
-  <script src="js/MindMap.js"></script>
-  <script src="js/Node.js"></script>
-  <script src="js/NodeMap.js"></script>
-  <script src="js/UndoManager.js"></script>
-  <script src="js/UndoController.js"></script>
-  <script src="js/ClipboardController.js"></script>
-  <script src="js/ZoomController.js"></script>
-  <script src="js/ShortcutController.js"></script>
-  <script src="js/HelpController.js"></script>
-  <script src="js/FloatPanel.js"></script>
-  <script src="js/Navigator.js"></script>
-  <script src="js/Inspector.js"></script>
-  <script src="js/ToolBar.js"></script>
-  <script src="js/StatusBar.js"></script>
-  <script src="js/CanvasDrawingTools.js"></script>
-  <script src="js/CanvasView.js"></script>
-  <script src="js/CanvasPresenter.js"></script>
-  <script src="js/ApplicationController.js"></script>
-  <script src="js/MindMapModel.js"></script>
-  <script src="js/NewDocument.js"></script>
-  <script src="js/OpenDocument.js"></script>
-  <script src="js/SaveDocument.js"></script>
-  <script src="js/MainViewController.js"></script>
-  <script src="js/Storage.js"></script>
-  <script src="js/Event.js"></script>
-  <script src="js/Notification.js"></script>
-  <script src="js/StaticCanvas.js"></script>
-  <script src="js/PrintController.js"></script>
-  <script src="js/ExportMap.js"></script>
-  <script src="js/AutoSaveController.js"></script>
-  <script src="js/FilePicker.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/MindMaps.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/Command.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/CommandRegistry.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/Action.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/Util.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/Point.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/Document.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/MindMap.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/Node.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/NodeMap.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/UndoManager.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/UndoController.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/ClipboardController.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/ZoomController.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/ShortcutController.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/HelpController.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/FloatPanel.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/Navigator.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/Inspector.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/ToolBar.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/StatusBar.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/CanvasDrawingTools.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/CanvasView.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/CanvasPresenter.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/ApplicationController.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/MindMapModel.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/NewDocument.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/OpenDocument.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/SaveDocument.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/MainViewController.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/Storage.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/Event.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/Notification.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/StaticCanvas.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/PrintController.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/ExportMap.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/AutoSaveController.js"></script>
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/FilePicker.js"></script>
   <!-- JS:LIB:END -->
 
   <!-- PRODUCTION -->
