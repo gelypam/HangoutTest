@@ -9,21 +9,32 @@ var respuesta = "";
 var longitud = 0;
 
 function CargaPreguntas(){
-	//Recupero una pregunta aleatoria de la BD
-	$.getJSON('http://metaversoeducativo.net/sisFH/msicu/php/servicioPreguntas.php', function(data) {
-	 	var palabra = "";
-
-	  	$.each(data.temario, function(indice, valor) {
-	  		window.respuesta = unescape(valor.respuesta);
+	//Recupero una pregunta aleatoria de la BD 
+		var palabra = "";
+			window.respuesta = "veracruz"; // unescape(valor.respuesta);
 	  		window.longitud = respuesta.length;
 	  		//Genero los espacios en blanco de acuerdo al número de letras de la respuesta
 			for(i=0; i<longitud; i++){
 				palabra += "<span><input type='text' name='l"+i+"' id='l"+i+"'></span>" 
 			}
-	  		$("#Palabra").append(palabra);
-			$("#Pregunta").append(valor.pregunta);
-	  	});
-	});
+			$("#Palabra").append(palabra);
+
+
+		// $.getJSON('php/servicioPreguntas.php', function(data) {
+		 	
+		// var palabra = "";
+
+		//   	$.each(data.temario, function(indice, valor) {
+		//   		window.respuesta = unescape(valor.respuesta);
+		//   		window.longitud = respuesta.length;
+		//   		//Genero los espacios en blanco de acuerdo al número de letras de la respuesta
+		// 		for(i=0; i<longitud; i++){
+		// 			palabra += "<span><input type='text' name='l"+i+"' id='l"+i+"'></span>" 
+		// 		}
+		//   		$("#Palabra").append(palabra);
+		// 		$("#Pregunta").append(valor.pregunta);
+		//   	});
+		// });
 }
 
 var abecedario = new Array();
