@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+  <ModulePrefs title="HangMan MSICU">
+    <Require feature="rpc"/>
+    <Require feature="views"/>
+  </ModulePrefs>
+  <Content type="html">
+    <![CDATA[
+<!DOCTYPE html>
+
+  <!-- PRODUCCION
+  <script src="//talkgadget.google.com/hangouts/_/api/hangout.js?v=1.2"></script>
+  -->
+  <!-- DESARROLLO -->
+  <script src="//hangoutsapi.talkgadget.google.com/hangouts/_/api/hangout.js?v=1.2"></script>
+
+<!-- PRODUCTION
+<html manifest="cache.appcache">
+/PRODUCTION -->
+
+
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<script src="http://api.filepicker.io/v0/filepicker.js"></script>
+
+  <!-- DEBUG -->
+  <!-- set debug flag for all scripts. Will be removed in production -->
+  <script type="text/javascript">
+    var mindmaps = mindmaps || {};
+    mindmaps.DEBUG = false;
+  </script>
+  <!-- /DEBUG -->
+
+  <!-- JS:LIB:BEGIN -->
+  <script src="js/libs/jquery-ui-1.8.11.custom.min.js"></script>
+  <script src="js/libs/dragscrollable.js"></script>
+  <script src="js/libs/jquery.hotkeys.js"></script>
+  <script src="js/libs/jquery.mousewheel.js"></script>
+  <script src="js/libs/jquery.minicolors.js"></script>
+  <script src="js/libs/jquery.tmpl.js"></script>
+  <script src="js/libs/swfobject.js"></script>
+  <script src="js/libs/downloadify.min.js"></script>
+  <script src="js/libs/events.js"></script>
+
+  <script src="js/MindMaps.js"></script>
+  <script src="js/Command.js"></script>
+  <script src="js/CommandRegistry.js"></script>
+  <script src="js/Action.js"></script>
+  <script src="js/Util.js"></script>
+  <script src="js/Point.js"></script>
+  <script src="js/Document.js"></script>
+  <script src="js/MindMap.js"></script>
+  <script src="js/Node.js"></script>
+  <script src="js/NodeMap.js"></script>
+  <script src="js/UndoManager.js"></script>
+  <script src="js/UndoController.js"></script>
+  <script src="js/ClipboardController.js"></script>
+  <script src="js/ZoomController.js"></script>
+  <script src="js/ShortcutController.js"></script>
+  <script src="js/HelpController.js"></script>
+  <script src="js/FloatPanel.js"></script>
+  <script src="js/Navigator.js"></script>
+  <script src="js/Inspector.js"></script>
+  <script src="js/ToolBar.js"></script>
+  <script src="js/StatusBar.js"></script>
+  <script src="js/CanvasDrawingTools.js"></script>
+  <script src="js/CanvasView.js"></script>
+  <script src="js/CanvasPresenter.js"></script>
+  <script src="js/ApplicationController.js"></script>
+  <script src="js/MindMapModel.js"></script>
+  <script src="js/NewDocument.js"></script>
+  <script src="js/OpenDocument.js"></script>
+  <script src="js/SaveDocument.js"></script>
+  <script src="js/MainViewController.js"></script>
+  <script src="js/Storage.js"></script>
+  <script src="js/Event.js"></script>
+  <script src="js/Notification.js"></script>
+  <script src="js/StaticCanvas.js"></script>
+  <script src="js/PrintController.js"></script>
+  <script src="js/ExportMap.js"></script>
+  <script src="js/AutoSaveController.js"></script>
+  <script src="js/FilePicker.js"></script>
+  <!-- JS:LIB:END -->
+
+  <!-- PRODUCTION 
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push([ '_setAccount', 'UA-23624804-1' ]);
+    _gaq.push([ '_trackPageview' ]);
+    (function() {
+      var ga = document.createElement('script');
+      ga.type = 'text/javascript';
+      ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl'
+          : 'http://www')
+          + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+<!--PRODUCTION -->
+
+<link rel="icon" type="image/png" href="img/favicon.png" />
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/app.css">
+<link rel="stylesheet" href="css/Aristo/jquery-ui-1.8.7.custom.css" />
+<link rel="stylesheet" href="css/minicolors/jquery.miniColors.css">
+
+
+  <div id="print-area">
+    <p class="print-placeholder">Please use the print option from the
+      mind map menu</p>
+  </div>
+ 
+  <div id="container">
+    <div id="topbar">
+      <div id="toolbar">
+        <div id="logo" class="logo-bg">
+          <span>Mapa Conceptual</span>
+        </div>
+
+        <div class="buttons">
+          <span class="buttons-left"> </span> <span class="buttons-right">
+          </span>
+        </div>
+
+      </div>
+    </div>
+    <div id="canvas-container">
+      <div id="drawing-area" class="no-select"></div>
+    </div>
+    <div id="bottombar">
+      
+      <div id="statusbar">
+        <div
+          class="buttons buttons-right buttons-small buttons-less-padding"></div>
+      </div>
+    </div>
+  </div>
+
+  
+
+
+
+    
+    ]]>
+  </Content>
+</Module>
