@@ -7,6 +7,13 @@
   <Content type="html">
     <![CDATA[
 <!DOCTYPE html>
+
+  <!-- PRODUCCION
+  <script src="//talkgadget.google.com/hangouts/_/api/hangout.js?v=1.2"></script>
+  -->
+  <!-- DESARROLLO -->
+  <script src="//hangoutsapi.talkgadget.google.com/hangouts/_/api/hangout.js?v=1.2"></script>
+
 <meta charset="utf-8">
 <meta name="description" content="Mapa Conceptual" />
 <meta name="keywords" content="mind maps html5 mindmaps offline easy intuitive" />
