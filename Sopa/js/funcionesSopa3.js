@@ -12,7 +12,13 @@ var PALABRA_ENCONTRADA = 'palabra_encontrada';
 var ACIERTOS = 'aciertos';
 var CLICKEADOS = 'clickeados';
 
+function onStateChange(eventObj) {
+	var s = gapi.hangout.data.getValue(SELECCIONADO)
+  console.log(s);  
+  validaPalabra(s);  
+};
 
+gapi.hangout.data.onStateChanged.add(onStateChange);
 //***********************************+//
 //Esta variable es un arreglo con número de la preguntas/palabras que ya se encontraron en la sopa de letras
 //Utilizala para saber que botón desactivas o le cambias el estilo para indicar que esa pregunta ya esta conectada

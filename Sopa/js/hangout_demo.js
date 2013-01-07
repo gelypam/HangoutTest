@@ -204,7 +204,7 @@ function prepareViewDOM() {
 function onStateChange(eventObj) {
   console.log(gapi.hangout.data.getValue(SELECCIONADO));  
   $("#" + gapi.hangout.data.getValue(SELECCIONADO)).addClass("Usado");
-  
+  console.log("");
 };
 
 gapi.hangout.data.onStateChanged.add(onStateChange);
