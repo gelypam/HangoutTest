@@ -40,7 +40,7 @@ function bootstrap() {
      scope : globalScopes,
      immediate : true
     }, function() {
-     ...
+     //...
     });
 
     /**
