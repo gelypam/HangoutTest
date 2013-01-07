@@ -191,10 +191,11 @@ function prepareViewDOM() {
         DOM_.body.append(div_right);
 }
 
-gapi.hangout.data.onStateChanged.add("onStateChange");
+gapi.hangout.data.onStateChanged.add(onStateChange);
 
 var onStateChange = function(eventObj) {
-for (var i = 0; i < eventObj.addedKeys.length; ++i) {
+  console.log("onStateChange");
+for (var i = 0; i < eventObj.addedKeys.length; ++i) {  
   foo(eventObj.addedKeys[i].key,
       eventObj.addedKeys[i].value,
       eventObj.addedKeys[i].timestamp);
