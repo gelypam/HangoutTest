@@ -30,7 +30,9 @@ function bootstrap() {
     }
                                 //...
                                 //...
-    var globalScopes = [
+    var globalScopes = ['https://www.googleapis.com/auth/plus.me',
+                        'https://www.googleapis.com/auth/hangout.av',
+                        'https://www.googleapis.com/auth/hangout.participants',
                         'https://www.googleapis.com/auth/userinfo.email',
                         'https://www.googleapis.com/auth/userinfo.profile'];
     /**
