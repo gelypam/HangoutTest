@@ -4,11 +4,11 @@
 	width: 700px;
 }
 .ahorcado{
-	border-bottom: 1px solid #000;
+	border-bottom: 0px solid #000;
 }
 .contenedor_ahorcado{
 	background-image: url("../imagenes/baseahorcado.png");
-	height: 200px;
+	height: 0px;
 	width: 180px;
 }
 .monito{
@@ -70,7 +70,7 @@ h5, .Resultado {
 	background: none repeat scroll 0 0 #FFFFFF;
 	border: 1px solid #CCCCCC;
 	margin: 0px 0;
-	padding: 0px;
+	padding: 0px 10px;
 	overflow: hidden;
 }
 .ColumnaUno {
@@ -92,7 +92,7 @@ h5, .Resultado {
 /*Sopa de letras*/
 .ContenedorSopa{
 	
-	margin: 20px auto;
+	margin: 0px auto;
     padding: 0;
     width: 650px;
     overflow: hidden;
@@ -123,7 +123,7 @@ h5, .Resultado {
 	font: normal 15px Arial;
 	height: 25px;
 	line-height: 100%;
-	padding: 6px 0 0;
+	padding: 4px 0 0;
 	text-align: center;
     text-decoration: none;
 	vertical-align: middle;	
@@ -203,13 +203,13 @@ h5, .Resultado {
     color: #CCC;
 	display: inline-block;
 	font: normal 15px Arial;
-	height: 20px;
+	height: 25px;
 	line-height: 100%;
 	padding: 6px 0 0;
 	text-align: center;
     text-decoration: none;
 	vertical-align: middle;	
-	width: 20px;
+	width: 30px;
 }
 .ContenedorAbecedario > ul > li > a:hover{
 	background: #000;
@@ -232,13 +232,13 @@ h5, .Resultado {
     color: #CCC;
 	display: inline-block;
 	font: normal 15px Arial;
-	height: 20px;
+	height: 25px;
 	line-height: 100%;
 	padding: 6px 0 0;
 	text-align: center;
     text-decoration: none;
 	vertical-align: middle;	
-	width: 20px;
+	width: 30px;
 }
 .ContenedorAbecedario > ul.Azul > li > a:hover{
 	background: #FFFFFF;
