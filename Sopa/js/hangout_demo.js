@@ -137,6 +137,7 @@ function bootstrap() {
        try { 
             if (eventObj.isApiReady) { 
               console.log("isApiReady"); 
+              dibujaSopa(gapi.hangout.data.getValue(SOPA));
                     //startApp(); 
             } 
           }

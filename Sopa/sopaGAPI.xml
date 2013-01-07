@@ -17,13 +17,7 @@
       <script type="text/javascript" src="https://raw.github.com/gelypam/HangoutTest/master/Sopa/js/jquery-1.7.1.min.js"></script>
       <script type="text/javascript" src="https://raw.github.com/gelypam/HangoutTest/master/Sopa/js/funcionesSopa3.js"></script>
 
-      <!-- JS con eventos de Hangout API--> 
-      <script type="text/javascript" src="https://raw.github.com/gelypam/HangoutTest/master/Sopa/js/hangout_demo.js"></script>
-    
-      <script>              
-        document.addEventListener("DOMContentLoaded", bootstrap, false);
-        //gadgets.util.registerOnLoadHandler(bootstrap);
-      </script>
+     
 
 
       <!-- application code -->

@@ -11,14 +11,9 @@ var CONTADOR_PALABRA = 'contador_palabra';
 var PALABRA_ENCONTRADA = 'palabra_encontrada';
 var ACIERTOS = 'aciertos';
 var CLICKEADOS = 'clickeados';
+var SOPA = 'sopa';
 
-function onStateChange(eventObj) {
-	var s = gapi.hangout.data.getValue(SELECCIONADO)
-  console.log(s);  
-  validaPalabra(s);  
-};
 
-gapi.hangout.data.onStateChanged.add(onStateChange);
 //***********************************+//
 //Esta variable es un arreglo con número de la preguntas/palabras que ya se encontraron en la sopa de letras
 //Utilizala para saber que botón desactivas o le cambias el estilo para indicar que esa pregunta ya esta conectada
@@ -129,6 +124,7 @@ function rellena(sopa){
 
 //Función que dibuja la sopa de letras completa en la página html
 function dibujaSopa(sopa){
+	gapi.hangout.data.setValue(SOPA,sopa);
 	laSopa = "";
 	for (i = 0; i < 13; i++) {
 		for (j = 0; j <20; j++) {
@@ -600,3 +596,29 @@ function PreguntaContestada(i){
 	
 	
 }
+
+
+
+function onStateChange(eventObj) {
+	var s = gapi.hangout.data.getValue(SELECCIONADO)
+  console.log(s+" - onStateChange function");  
+  validaPalabra(s);  
+};
+
+gapi.hangout.onApiReady.add(function(eventObj) 
+{ 
+	var SOPITA = gapi.hangout.data.getValue(SOPA);
+	try { 
+	    if (eventObj.isApiReady) { 
+	      console.log("isApiReady"); 
+	      if(SOPITA.length>0)
+	      	dibujaSopa(gapi.hangout.data.getValue(SOPA));
+	            //startApp(); 
+	    } 
+	  }
+	catch (e) { 
+	    console.log(e.stack); 
+	} 
+}); 
+
+gapi.hangout.data.onStateChanged.add(onStateChange);
