@@ -203,13 +203,13 @@ h5, .Resultado {
     color: #CCC;
 	display: inline-block;
 	font: normal 15px Arial;
-	height: 25px;
+	height: 20px;
 	line-height: 100%;
 	padding: 6px 0 0;
 	text-align: center;
     text-decoration: none;
 	vertical-align: middle;	
-	width: 30px;
+	width: 20px;
 }
 .ContenedorAbecedario > ul > li > a:hover{
 	background: #000;
@@ -232,13 +232,13 @@ h5, .Resultado {
     color: #CCC;
 	display: inline-block;
 	font: normal 15px Arial;
-	height: 25px;
+	height: 20px;
 	line-height: 100%;
 	padding: 6px 0 0;
 	text-align: center;
     text-decoration: none;
 	vertical-align: middle;	
-	width: 30px;
+	width: 20px;
 }
 .ContenedorAbecedario > ul.Azul > li > a:hover{
 	background: #FFFFFF;
