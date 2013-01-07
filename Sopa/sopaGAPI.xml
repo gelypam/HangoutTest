@@ -15,7 +15,7 @@
 
       <link rel="stylesheet" type="text/css" href="https://raw.github.com/gelypam/HangoutTest/master/Sopa/css/estilos.css" />  
       <script type="text/javascript" src="https://raw.github.com/gelypam/HangoutTest/master/Sopa/js/jquery-1.7.1.min.js"></script>
-      <script type="text/javascript" src="https://raw.github.com/gelypam/HangoutTest/master/Sopa/js/funcionesSopa.js"></script>
+      <script type="text/javascript" src="https://raw.github.com/gelypam/HangoutTest/master/Sopa/js/funcionesSopa3.js"></script>
 
       <!-- JS con eventos de Hangout API--> 
       <script type="text/javascript" src="https://raw.github.com/gelypam/HangoutTest/master/Sopa/js/hangout_demo.js"></script>

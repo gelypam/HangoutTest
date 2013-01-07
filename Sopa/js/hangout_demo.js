@@ -205,8 +205,8 @@ function onStateChange(eventObj) {
   console.log(gapi.hangout.data.getValue(SELECCIONADO));  
   validaPalabra(SELECCIONADO);
   
-
 };
+
 gapi.hangout.data.onStateChanged.add(onStateChange);
 
 var onParticipantsChange = function(eventObj) {
