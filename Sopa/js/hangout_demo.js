@@ -62,7 +62,7 @@ function bootstrap() {
     /**
      * Obtenemos el nivel de Audio del participante  
      */
-    gapi.hangout.av .getParticipantAudioLevel(gapi.hangout.getParticipantId());
+    gapi.hangout.av.getParticipantAudioLevel(gapi.hangout.getParticipantId());
                                
     /**
      * Cambió el nivel del volumen?
@@ -130,6 +130,7 @@ function bootstrap() {
             if (eventObj.isApiReady) { 
                     startApp(); 
             } 
+          }
       catch (e) { 
             console.log(e.stack); 
       } 
@@ -189,22 +190,24 @@ function prepareViewDOM() {
         DOM_.body.append(div_right);
 }
 
-var onStateChange = function(eventObj) {
-    for (var i = 0; i < eventObj.addedKeys.length; ++i) {
-      foo(eventObj.addedKeys[i].key,
-          eventObj.addedKeys[i].value,
-          eventObj.addedKeys[i].timestamp);
-          console.log(eventObj.addedKeys[i].value);
-      }
-      for (var j = 0; j < eventObj.removedKeys.length; ++j) {
-        bar(eventObj.removedKeys[j]);
-      }
-      state_ = eventObj.state;
-      metadata_ = eventObj.metadata;
-    };
-    gapi.hangout.data.onStateChanged.add(onStateChange);
+gapi.hangout.data.onStateChanged.add(onStateChange);
 
-    var onParticipantsChange = function(eventObj) {
-    participants_ = eventObj.participants;
-    console.log("onParticipantsChange");
-    };
+var onStateChange = function(eventObj) {
+for (var i = 0; i < eventObj.addedKeys.length; ++i) {
+  foo(eventObj.addedKeys[i].key,
+      eventObj.addedKeys[i].value,
+      eventObj.addedKeys[i].timestamp);
+      console.log(eventObj.addedKeys[i].value);
+  }
+  for (var j = 0; j < eventObj.removedKeys.length; ++j) {
+    bar(eventObj.removedKeys[j]);
+  }
+  state_ = eventObj.state;
+  metadata_ = eventObj.metadata;
+};
+
+
+var onParticipantsChange = function(eventObj) {
+participants_ = eventObj.participants;
+console.log("onParticipantsChange");
+};
