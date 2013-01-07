@@ -143,7 +143,17 @@ function bootstrap() {
      * Evento disparado cuando el API esta lista para ser utilizada!!!!
      * el callback a utilizar es la función definida en la variable inithangout
      */ 
-  gapi.hangout.onApiReady.add(initHangout);
+  //gapi.hangout.onApiReady.add(initHangout);
+    gapi.hangout.onApiReady.add(function(eventObj) 
+    { 
+       try { 
+            if (eventObj.isApiReady) { 
+                    startApp(); 
+            } 
+      catch (e) { 
+            console.log(e.stack); 
+      } 
+    }); 
 
 
   
