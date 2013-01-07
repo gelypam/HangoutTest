@@ -6,25 +6,29 @@
   </ModulePrefs>
   <Content type="html">
     <![CDATA[
-<!DOCTYPE html>
+      <!-- jquery -->
+      <script type="text/javascript" src="//www.google.com/jsapi"></script>
+      <script type="text/javascript">google.load("jquery", "1.7.1");</script>
 
-  <!-- PRODUCCION
-  <script src="//talkgadget.google.com/hangouts/_/api/hangout.js?v=1.2"></script>
-  -->
-  <!-- DESARROLLO -->
-  <script src="//hangoutsapi.talkgadget.google.com/hangouts/_/api/hangout.js?v=1.2"></script>
+      <!-- PRODUCCION
+      <script src="//talkgadget.google.com/hangouts/_/api/hangout.js?v=1.2"></script>
+      -->
+      <!-- DESARROLLO -->
+      <script src="//hangoutsapi.talkgadget.google.com/hangouts/_/api/hangout.js?v=1.2"></script>
 
 <!-- PRODUCTION
 <html manifest="cache.appcache">
-/PRODUCTION -->
+PRODUCTION -->
 
 
-<!-- --------------INICIA REFERENCIAS Y SCRIPT ----------- -->
+<!-- --------------INICIA REFERENCIAS Y SCRIPT ----------- -->  
+
+
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 <script src="http://api.filepicker.io/v0/filepicker.js"></script>
 
-  
+
 
   <!-- JS:LIB:BEGIN -->
   <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/libs/jquery-ui-1.8.11.custom.min.js"></script>
