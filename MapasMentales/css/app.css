@@ -147,6 +147,7 @@ html,body {
   bottom: 0;
   background: #EEE;
   border-top: 1px solid #AAA;
+  width: 850px; /*850px barra de estado*/
 }
 
 #statusbar {
