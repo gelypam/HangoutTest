@@ -6,7 +6,6 @@ var numPalabras=0;
 var aciertos=0;
 
 
-
 //***********************************+//
 //Esta variable es un arreglo con número de la preguntas/palabras que ya se encontraron en la sopa de letras
 //Utilizala para saber que botón desactivas o le cambias el estilo para indicar que esa pregunta ya esta conectada
@@ -14,62 +13,72 @@ var preguntasContestadas = new Array();
 //*****************************************************+//
 
 $(document).on('ready', function(){
+	
+	//CargaPreguntas();
 	CargaPreguntas();
 
-	for(i=0;i<10;i++){
-		resultados[i]=0;
-	}
-
-	
-
-	
-
-	//CargaPreguntas();
-	mrespuestas(respuestas);
-	
-
-
-	
+	palabra = "EjemplomasT";
 	creaSopa(sopa);
 
-
-	//for(i=0;i<10;i++){
-	//		console.log("desde otro lado:"  + resultados[i]);
-	//}
-
-	
+	for(i = 0; i < 10; i++) {
+		respuestas[i] = "*";
+	};	
 
 	//*****************************************************+//
 	//AQUI METER LAS 10 PALABRAS EXTRAIDAS DE LA BD
 	//Es muy importante validar que las palabras no contengan mas de 13 letras , ya que no cabrian verticalmente y cuasaría errores
 	//Mete las palabras en MAYUSCULAS, ya que así se generan las letras aleatorias de relleno y además se ve mejor.
+	setTimeout(function() {
+		/*for(i=0;i<10;i++){
+			console.log("tamaño: " + resultados.length);
+			console.log("inicia ciclo");
+			console.log("numero de palabra: "+ i+" ....");
+			if (resultados[i]=="LAN") {
+				
+				console.log("-"+resultados[i]+"-");
+				//acomodaPalabras(sopa, respuestas, "LANA");
+			}else{
+				console.log("*"+resultados[i]+"*");
+				//acomodaPalabras(sopa, respuestas, resultados[i]);
+			}
+			
+		}
+		*/
+		//Prueba con palabras fijas
 
-	
-	acomodaPalabras(sopa, respuestas, "ABECEDARIO");
-	acomodaPalabras(sopa, respuestas, "BANQUERO");
-	acomodaPalabras(sopa, respuestas, "GIRATORIO");
-	acomodaPalabras(sopa, respuestas, "LIMITADAMENTE");
-	acomodaPalabras(sopa, respuestas, "REAPARECER");
-	acomodaPalabras(sopa, respuestas, "LUMINICENCIA");
-	acomodaPalabras(sopa, respuestas, "SEMILLA");
-	acomodaPalabras(sopa, respuestas, "MAPA");
-	acomodaPalabras(sopa, respuestas, "EDGAR");
-	acomodaPalabras(sopa, respuestas, "PULSO");
-	
-	//*****************************************************+//
-
-	//Comenta esta función si sólo quieres ver las 10 palabras que están dentro de la sopa de letras
-	//rellena(sopa);
-
-
-
-	dibujaSopa(sopa);
-
-	
-	rr="";
-	ar = new Array();
-	for (i =0; i < 10; i++){
+		w1=resultados[0];
+			w2=resultados[1];
+			w3=resultados[2];
+			w4=resultados[3];
+			w5=resultados[4];
+			w6=resultados[5];
+			w7=resultados[6];
+			w8=resultados[7];
+			w9=resultados[8];
+			w10=resultados[9];
 		
+		acomodaPalabras(sopa, respuestas, w1);
+		acomodaPalabras(sopa, respuestas, w2);
+		acomodaPalabras(sopa, respuestas, w3);
+		acomodaPalabras(sopa, respuestas, w4);
+		acomodaPalabras(sopa, respuestas, w5);
+		acomodaPalabras(sopa, respuestas, w6);
+		acomodaPalabras(sopa, respuestas, w7);
+		acomodaPalabras(sopa, respuestas, w8);
+		acomodaPalabras(sopa, respuestas, w9);
+		acomodaPalabras(sopa, respuestas, w10);
+		
+		
+		//*****************************************************+//
+
+		//Comenta esta función si sólo quieres ver las 10 palabras que están dentro de la sopa de letras
+		rellena(sopa);
+		dibujaSopa(sopa);	
+		
+		
+		/*rr="";
+		var ar = new Array();
+		for (i =0; i < 10; i++){
 			//respuestas[i][j] = "*";
 			rr += "pos pal " + i.toString()+ ": ";
 			ar = respuestas[i][1];
@@ -77,34 +86,17 @@ $(document).on('ready', function(){
 				rr += ar[k] + " ";
 			}
 			rr += "---";
-		
+		}*/
+	},2000);
+	
 
-		
-	}
-
-
-
-	for (i = 0; i < 10; i++) {
-		console.log("desde fuera: "+resultados[i]);
-	};
-	//alert (rr);
-
-	//CargaPreguntas();
-	//SOPA DE LETRAS
 });
 
-function mrespuestas(respuestas){
-	
-	
+/*function mrespuestas(respuestas){
 	for (i = 0; i < 10; i++) {
 			respuestas[i] = "*";
 	};	
-	
-	
-}
-
-
-
+}*/
 
 //Función que genera letras aleatorias para rellenar la sopa de letras
 function rellena(sopa){
@@ -211,10 +203,13 @@ function validaPalabra(ob){
 
     								preguntasContestadas.push(respuestas[j][0]);
 
+    								PreguntaContestada(j);
+
     								for (var i = 0; i < preguntasContestadas.length; i++) {
     									//alert ( preguntasContestadas[i]);
     								};
     								
+
 
     								for (var l = 0; l < revisarRes[j].length; l++) {
     									console.log("tamaño palabra "+ j+": "+revisarRes[j].length);
@@ -241,7 +236,7 @@ function validaPalabra(ob){
 									console.log("CLICKEADOS: " + selec);
 
 									if (aciertos==10) {
-										alert("felicidades has descubierto todas las palabras");
+										alert("¡ Felicidades has encontrado todas las palabras !");
 									};	
 									
     							}
@@ -278,10 +273,10 @@ function creaSopa(sopa){
 }
 
 function aleatorio(inferior,superior){ 
-    numPosibilidades = superior - inferior 
-    aleat = Math.random() * numPosibilidades 
-    aleat = Math.floor(aleat) 
-    return parseInt(inferior) + aleat 
+    numPosibilidades = superior - inferior; 
+    aleat = Math.random() * numPosibilidades;
+    aleat = Math.floor(aleat);
+    return parseInt(inferior) + aleat;
 } 
 
 
@@ -303,7 +298,7 @@ function acomodaPalabras(sopa, respuestas, palabra){
 			tipo = aleatorio(1,5);
 		}
 
-		//tipo = 4;
+		//tipo = 1;
 		switch(tipo){
 			
 			//Tipo "1" es para palabras verticales de arriba hacia abajo
@@ -548,12 +543,10 @@ function acomodaPalabras(sopa, respuestas, palabra){
 	
 }
 
-
 //Funciones para mostrar los botones para las 10 preguntas
 var preguntas = new Array();
 var resultados = new Array();
 function CargaPreguntas(){
-			
 	//Recupero una pregunta aleatoria de la BD
 	$.getJSON('http://metaversoeducativo.net/sisFH/msicu/php/servicioPreguntasSopa.php', function(data) {
 	  	$.each(data.temario, function(indice, valor) {
@@ -561,19 +554,34 @@ function CargaPreguntas(){
 	  		//Genero los números del 1 al 10 que mostrarán cada pregunta
 	  		var numeros = '<button type="button" id="'+indice+'"><b>'+(indice + 1)+'</b></button>';
 		  	$("#botones").append(numeros);
+		  	//var pre="b"+indice.toString();
+		  	//alert(pre);
 	  		$("#"+indice).on("click",function(){
-	  			MuestraPregunta(this.id);
+	  			if ( ($("#"+indice).hasClass('Contestada')) ) {
+	  				
+	  				$("#preguntas").empty();
+					$("#preguntas").append("Palabra encontrada: " + resultados[indice]);	
+	  			}
+	  			else{
+	  				MuestraPregunta(this.id);	
+	  			}
+	  			
 	  		});
 	  		resultados[indice] = valor.respuesta.toUpperCase();
-	  		console.log("resultados:" + resultados[indice]);
-	  		
-
 	  	});
 	});
-	
 }
 
 function MuestraPregunta(i){
 	$("#preguntas").empty();
 	$("#preguntas").append(preguntas[i]);
+}
+
+function PreguntaContestada(i){
+	//$("#botones button b").empty();
+	//$("#"+i).css("color","red");
+	$('#' + i).removeClass();
+    $('#' + i).addClass("Contestada");
+	
+	
 }

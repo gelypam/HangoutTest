@@ -19,7 +19,7 @@ function bootstrap() {
      * Toma por defecto el API KEY registrado en el Hangout
      * Utilizado para el manejo de la autenticación y autorización.
      */
-    gapi.client.setApiKey(null);
+    //gapi.client.setApiKey(null);
 
     /**
      * Obteniendo los participantes del hangout
