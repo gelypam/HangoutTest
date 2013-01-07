@@ -18,7 +18,7 @@
       <script type="text/javascript" src="https://raw.github.com/gelypam/HangoutTest/master/Sopa/js/funcionesSopa.js"></script>
 
       <!-- Inclusión de nuestros JS, los que son parte de nuestra aplicación--> 
-      <script type="text/javascript" src="https://raw.github.com/gelypam/HangoutTest/master/Sopa/js/hangout_demo.js.txt"></script>
+      <script type="text/javascript" src="https://raw.github.com/gelypam/HangoutTest/master/Sopa/js/hangout_demo.js"></script>
     
       <script>document.addEventListener("DOMContentLoaded", bootstrap, false);
 
