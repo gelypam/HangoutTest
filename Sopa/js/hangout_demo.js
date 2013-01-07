@@ -1,3 +1,11 @@
+
+/*VARIABLES GAPI.HANGOUT.DATA*/
+var SELECCIONADO = 'selected';
+var CONTADOR_PALABRA = 'contador_palabra';
+var PALABRA_ENCONTRADA = 'palabra_encontrada';
+var ACIERTOS = 'aciertos';
+var CLICKEADOS = 'clickeados';
+
 /**
  * Función de inicialización de la aplicación
  */
@@ -194,17 +202,8 @@ function prepareViewDOM() {
 
 
 var onStateChange = function(eventObj) {
-  console.log("onStateChange");  
-
-  for (var i = 0; i < eventObj.addedKeys.length; ++i) {  
-  foo(eventObj.addedKeys[i].key,
-      eventObj.addedKeys[i].value,
-      eventObj.addedKeys[i].timestamp);
-      console.log(eventObj.value);
-  }
-  for (var j = 0; j < eventObj.removedKeys.length; ++j) {
-    bar(eventObj.removedKeys[j]);
-  }
+  console.log(gapi.hangout.data.getValue(SELECCIONADO));  
+  validaPalabra(ob);
   
   state_ = eventObj.state;
   metadata_ = eventObj.metadata;

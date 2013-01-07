@@ -5,7 +5,12 @@ var seleccionados = ["--->"];
 var numPalabras=0;
 var aciertos=0;
 
-
+/*VARIABLES GAPI.HANGOUT.DATA*/
+var SELECCIONADO = 'selected';
+var CONTADOR_PALABRA = 'contador_palabra';
+var PALABRA_ENCONTRADA = 'palabra_encontrada';
+var ACIERTOS = 'aciertos';
+var CLICKEADOS = 'clickeados';
 
 //***********************************+//
 //Esta variable es un arreglo con número de la preguntas/palabras que ya se encontraron en la sopa de letras
@@ -181,6 +186,7 @@ function validaPalabra(ob){
             if (!esta) {
     			
     			seleccionados.push(elid);
+    			gapi.hangout.data.setValue(SELECCIONADO, elid); //google Hangout
 
     			cc= new Array(10);
     			cc[0]=0;
@@ -204,10 +210,13 @@ function validaPalabra(ob){
     							cc[j] = cc[j] + 1;
     							console.log("Letra correcta");
     							console.log("contador palabra " +j+": "+cc[j]);
+    							gapi.hangout.data.setValue(CONTADOR_PALABRA, j+": "+cc[j]); //google Hangout
     							if (cc[j] == revisarRes[j].length) {
-    								console.log("PALABRA ENCONTRADA");
+    								console.log("PALABRA ENCONTRADA");    
+    								gapi.hangout.data.setValue(PALABRA_ENCONTRADA, true); //google Hangout
     								aciertos ++;
-    								
+    								gapi.hangout.data.setValue(ACIERTOS, aciertos); //google Hangout
+
 
     								preguntasContestadas.push(respuestas[j][0]);
 
@@ -239,6 +248,8 @@ function validaPalabra(ob){
 										selec += seleccionados[i]+ " ";
 									}
 									console.log("CLICKEADOS: " + selec);
+									gapi.hangout.data.setValue(CLICKEADOS, selec);//google Hangout
+
 
 									if (aciertos==10) {
 										alert("felicidades has descubierto todas las palabras");
