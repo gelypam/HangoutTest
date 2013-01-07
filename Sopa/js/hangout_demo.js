@@ -139,3 +139,51 @@ function bootstrap() {
 
  }
 };
+
+/**
+ * Variables Globales de la aplicacion
+ */
+var api_key = "AIzaSyBXW3ct9U5L1guh9LdCpYVK4ZCeaV_vw3w";
+
+var participants;
+
+var DOM_ = {
+        body : null,
+        canvas : null,
+        avatarList : null,
+        map : null,
+        participans : null,
+        info : null
+};
+
+/**
+ * Prepara la vista de la aplicacion, arma el arbol DOM
+ */
+function prepareViewDOM() {
+        DOM_.body = $('body');
+
+        var div_left = $("<div>").attr("id", "container_left").css("float", "left")
+                        .css("width", "30%");
+        var div_right = $("<div>").attr("id", "container_right").css("float",
+                        "left").css("width", "70%");
+
+        DOM_.avatarList = $('<ul />').attr('id', 'avatarList');
+        DOM_.canvas = $('<canvas />').attr('id', 'canvas');
+
+        DOM_.participans = $('<ul />').attr('id', 'participans');
+
+        DOM_.map = $('<div />').attr('id', 'map');
+        DOM_.map.css("height", "250px");
+        DOM_.map.css("width", "280px");
+
+        info = $("<div />").attr("id", "info");
+
+        div_right.append(DOM_.canvas);
+        div_right.append(info);
+
+        div_left.append(DOM_.map);
+        div_left.append($('<div />').append(DOM_.participans));
+
+        DOM_.body.append(div_left);
+        DOM_.body.append(div_right);
+}
