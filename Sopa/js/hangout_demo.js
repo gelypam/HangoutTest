@@ -195,7 +195,9 @@ gapi.hangout.data.onStateChanged.add(onStateChange);
 
 var onStateChange = function(eventObj) {
   console.log("onStateChange");
-for (var i = 0; i < eventObj.addedKeys.length; ++i) {  
+  gapi.hangout.data.getState();
+  
+ /*for (var i = 0; i < eventObj.addedKeys.length; ++i) {  
   foo(eventObj.addedKeys[i].key,
       eventObj.addedKeys[i].value,
       eventObj.addedKeys[i].timestamp);
@@ -204,6 +206,7 @@ for (var i = 0; i < eventObj.addedKeys.length; ++i) {
   for (var j = 0; j < eventObj.removedKeys.length; ++j) {
     bar(eventObj.removedKeys[j]);
   }
+  */
   state_ = eventObj.state;
   metadata_ = eventObj.metadata;
 };
