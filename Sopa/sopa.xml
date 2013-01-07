@@ -13,32 +13,21 @@
       <!-- DESARROLLO -->
       <script src="//hangoutsapi.talkgadget.google.com/hangouts/_/api/hangout.js?v=1.2"></script>
 
-
-
-  <link rel="stylesheet" type="text/css" href="https://raw.github.com/gelypam/HangoutTest/master/Sopa/css/estilos.css" />  
-  <script type="text/javascript" src="https://raw.github.com/gelypam/HangoutTest/master/Sopa/js/jquery-1.7.1.min.js"></script>
-  <script type="text/javascript" src="https://raw.github.com/gelypam/HangoutTest/master/Sopa/js/funcionesSopa.js"></script>
+      <link rel="stylesheet" type="text/css" href="https://raw.github.com/gelypam/HangoutTest/master/Sopa/css/estilos.css" />  
+      <script type="text/javascript" src="https://raw.github.com/gelypam/HangoutTest/master/Sopa/js/jquery-1.7.1.min.js"></script>
+      <script type="text/javascript" src="https://raw.github.com/gelypam/HangoutTest/master/Sopa/js/funcionesSopa.js"></script>
 
 
       <!-- application code -->
       <div class="principal">
         <div class="JuegoAhorcado">
-          <div>
-            <h1>Instrucciones:</h1>
-            <h3>La sopa de letras es un juego en el que tienes que buscar las respuestas segun las preguntas.</h3>
-            
-          
-          </div>
-          
           <div class="ContenedorJuego">
             <div id="botones"></div>
             <div id="preguntas"></div>
             <div class="ColumnaUno">
               
-              <div id="ContenedorSopa" class="ContenedorSopa">
-                
-                <ul class="Azul" id="letras"></ul>
-                
+              <div id="ContenedorSopa" class="ContenedorSopa">            
+                <ul class="Azul" id="letras"></ul>            
               </div>
               <div class="Palabra" id="Palabra"></div>
             </div>
