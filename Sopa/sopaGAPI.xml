@@ -20,10 +20,7 @@
       <!-- JS con eventos de Hangout API--> 
       <script type="text/javascript" src="https://raw.github.com/gelypam/HangoutTest/master/Sopa/js/hangout_demo.js"></script>
     
-      <script>
-        <!-- Evento que lanzado cuando se carga el DOM, también podemos usar el evento 
-          registerOnLoadHandler() del api de gadgets, a ambos manejadores le pasamos 
-          la función de inicialización *Hangout API* -->        
+      <script>              
         document.addEventListener("DOMContentLoaded", bootstrap, false);
         //gadgets.util.registerOnLoadHandler(bootstrap);
       </script>
