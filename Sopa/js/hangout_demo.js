@@ -128,7 +128,8 @@ function bootstrap() {
     { 
        try { 
             if (eventObj.isApiReady) { 
-                    startApp(); 
+              console.log("isApiReady"); 
+                    //startApp(); 
             } 
           }
       catch (e) { 
