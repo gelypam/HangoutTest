@@ -106,7 +106,7 @@ html,body {
 .buttons-right {
   position: absolute;
   right: 0;
-  margin-right: 8px;
+  margin-right: 80px; /*tenía 8px, se cambió a 80 para ajustarlo al chat del hangout*/
   margin-top: 6px; /*al modificar el contenedor a 850*/
 }
 
