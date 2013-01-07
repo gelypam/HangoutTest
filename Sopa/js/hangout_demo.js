@@ -203,7 +203,7 @@ function prepareViewDOM() {
 
 function onStateChange(eventObj) {
   console.log(gapi.hangout.data.getValue(SELECCIONADO));  
-  validaPalabra(ob);
+  validaPalabra(SELECCIONADO);
   
 
 };
