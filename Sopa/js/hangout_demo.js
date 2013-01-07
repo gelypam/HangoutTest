@@ -191,14 +191,14 @@ function prepareViewDOM() {
         DOM_.body.append(div_right);
 }
 
-gapi.hangout.data.onStateChanged.add(onStateChange);
+gapi.hangout.data.onStateChanged.add("onStateChange");
 
 var onStateChange = function(eventObj) {
 for (var i = 0; i < eventObj.addedKeys.length; ++i) {
   foo(eventObj.addedKeys[i].key,
       eventObj.addedKeys[i].value,
       eventObj.addedKeys[i].timestamp);
-      console.log(eventObj.addedKeys[i].value);
+      console.log(eventObj.value);
   }
   for (var j = 0; j < eventObj.removedKeys.length; ++j) {
     bar(eventObj.removedKeys[j]);
