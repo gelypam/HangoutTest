@@ -201,12 +201,11 @@ function prepareViewDOM() {
 
 
 
-var onStateChange = function(eventObj) {
+function onStateChange(eventObj) {
   console.log(gapi.hangout.data.getValue(SELECCIONADO));  
   validaPalabra(ob);
   
-  state_ = eventObj.state;
-  metadata_ = eventObj.metadata;
+
 };
 gapi.hangout.data.onStateChanged.add(onStateChange);
 
