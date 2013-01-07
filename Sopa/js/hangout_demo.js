@@ -26,10 +26,13 @@ function bootstrap() {
      */
     participants = gapi.hangout.getParticipants();
     for ( var index = 0; index < participants.length; index++) {
-     console.log("participants + 1");
+     console.log("participant Num:" + index);
     }
                                 //...
                                 //...
+    var globalScopes = [
+                        'https://www.googleapis.com/auth/userinfo.email',
+                        'https://www.googleapis.com/auth/userinfo.profile'];
     /**
      * Pidiendo autorización para distintos scoupes de OAuth
      * client_id es nulo porque toma por defecto el client id
@@ -40,6 +43,8 @@ function bootstrap() {
      scope : globalScopes,
      immediate : true
     }, function() {
+      var token = gapi.auth.getToken();
+      console.log("token: " + token);
      //...
     });
 
