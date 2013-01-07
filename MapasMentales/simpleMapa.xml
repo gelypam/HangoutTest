@@ -24,6 +24,11 @@ PRODUCTION -->
 <!-- --------------INICIA REFERENCIAS Y SCRIPT ----------- -->  
 
 
+<meta charset="utf-8">
+<meta name="description" content="Mapa Conceptual" />
+<meta name="keywords" content="mind maps html5 mindmaps offline easy intuitive" />
+<meta name="google" content="notranslate"/>
+
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 <script src="http://api.filepicker.io/v0/filepicker.js"></script>
