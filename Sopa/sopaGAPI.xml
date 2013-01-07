@@ -17,10 +17,16 @@
       <script type="text/javascript" src="https://raw.github.com/gelypam/HangoutTest/master/Sopa/js/jquery-1.7.1.min.js"></script>
       <script type="text/javascript" src="https://raw.github.com/gelypam/HangoutTest/master/Sopa/js/funcionesSopa.js"></script>
 
-      <!-- Inclusión de nuestros JS, los que son parte de nuestra aplicación--> 
+      <!-- JS con eventos de Hangout API--> 
       <script type="text/javascript" src="https://raw.github.com/gelypam/HangoutTest/master/Sopa/js/hangout_demo.js"></script>
     
-      <script>document.addEventListener("DOMContentLoaded", bootstrap, false);
+      <script>
+        <!-- Evento que lanzado cuando se carga el DOM, también podemos usar el evento 
+          registerOnLoadHandler() del api de gadgets, a ambos manejadores le pasamos 
+          la función de inicialización *Hangout API* -->        
+        document.addEventListener("DOMContentLoaded", bootstrap, false);
+        //gadgets.util.registerOnLoadHandler(bootstrap);
+      </script>
 
 
       <!-- application code -->
