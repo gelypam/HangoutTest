@@ -88,8 +88,6 @@ PRODUCTION -->
   <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/MindMapModel_Hangout.js"></script>
   <script>console.log("MindMapModel_Hangout executed");</script>
   <script>
-/*INICIA HANGOUT*/
-var kMAPA = "mapaModel";
 
 function onStateChange() {
   console.log("entró en onStateChange");
@@ -111,7 +109,7 @@ gapi.hangout.onApiReady.add(function(eventObj)
         console.log("entró en isApiReady");
         var existe = gapi.hangout.data.getValue('mapaModel');
         if(existe){
-          console.log("entró a existe");
+          console.log("existe: " + existe);
           pintaMapa(existe);
         }          
       } 
@@ -123,9 +121,8 @@ gapi.hangout.onApiReady.add(function(eventObj)
 
 gapi.hangout.data.onStateChanged.add(onStateChange);
 
-/*TERMINA HANGOUT*/
-
 </script>
+
   <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/NewDocument.js"></script>
   <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/OpenDocument.js"></script>
   <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/SaveDocument.js"></script>
