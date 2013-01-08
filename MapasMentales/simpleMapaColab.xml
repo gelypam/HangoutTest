@@ -35,46 +35,7 @@ PRODUCTION -->
 <script src="http://api.filepicker.io/v0/filepicker.js"></script>
 
 
-<script>
-/*INICIA HANGOUT*/
-var kMAPA = "mapaModel";
 
-function onStateChange() {
-  console.log("entró en onStateChange");
-  var existe = gapi.hangout.data.getValue(kMAPA);
-  if(existe){
-    console.log("existe: " + existe);
-    pintaMapa(existe);
-  }
-};
-
-function pintaMapa(json) {  
-    return mindmaps.MindMap.fromObject(JSON.parse(json)); 
-}
-
-gapi.hangout.onApiReady.add(function(eventObj) 
-{   
-  console.log("entró en isApiReady");
-  try {       
-      if (eventObj.isApiReady) { 
-        console.log("entró en isApiReady");
-        var existe = gapi.hangout.data.getValue(kMAPA);
-        if(existe){
-          console.log("entró a existe");
-          //pintaMapa(existe);
-        }          
-      } 
-    }
-  catch (e) { 
-      console.log(e.stack); 
-  } 
-});
-
-gapi.hangout.data.onStateChanged.add(onStateChange);
-
-/*TERMINA HANGOUT*/
-
-</script>
 
 
   <!-- JS:LIB:BEGIN -->
@@ -126,6 +87,46 @@ gapi.hangout.data.onStateChanged.add(onStateChange);
   <script>console.log("aplicationController executed");</script>
   <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/MindMapModel_Hangout.js"></script>
   <script>console.log("MindMapModel_Hangout executed");</script>
+  <script>
+/*INICIA HANGOUT*/
+var kMAPA = "mapaModel";
+
+function onStateChange() {
+  console.log("entró en onStateChange");
+  var existe = gapi.hangout.data.getValue(kMAPA);
+  if(existe){
+    console.log("existe: " + existe);
+    pintaMapa(existe);
+  }
+};
+
+function pintaMapa(json) {  
+    return mindmaps.MindMap.fromObject(JSON.parse(json)); 
+}
+
+gapi.hangout.onApiReady.add(function(eventObj) 
+{   
+  console.log("entró en isApiReady");
+  try {       
+      if (eventObj.isApiReady) { 
+        console.log("entró en isApiReady");
+        var existe = gapi.hangout.data.getValue(kMAPA);
+        if(existe){
+          console.log("entró a existe");
+          //pintaMapa(existe);
+        }          
+      } 
+    }
+  catch (e) { 
+      console.log(e.stack); 
+  } 
+});
+
+gapi.hangout.data.onStateChanged.add(onStateChange);
+
+/*TERMINA HANGOUT*/
+
+</script>
   <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/NewDocument.js"></script>
   <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/OpenDocument.js"></script>
   <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/SaveDocument.js"></script>
