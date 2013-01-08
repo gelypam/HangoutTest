@@ -13,7 +13,7 @@ var kACIERTOS = 'aciertos';
 var kCLICKEADOS = 'clickeados';
 var kSOPA = 'sopa';
 var kFILA = 'fila'
-
+var SOPITA;
 
 //***********************************+//
 //Esta variable es un arreglo con número de la preguntas/palabras que ya se encontraron en la sopa de letras
@@ -23,7 +23,8 @@ var preguntasContestadas = new Array();
 
 $(document).on('ready', function(){
 	
-	if(!gapi.hangout.data.getValue(kSOPA)){
+	if(!SOPITA){
+		
 		CargaPreguntas();
 
 		palabra = "EjemplomasT";
@@ -612,7 +613,7 @@ function onStateChange() {
 
 gapi.hangout.onApiReady.add(function(eventObj) 
 { 
-	var SOPITA = gapi.hangout.data.getValue(kSOPA);
+	SOPITA = gapi.hangout.data.getValue(kSOPA);
 	try { 
 	    if (eventObj.isApiReady) { 
 	      console.log("isApiReady"); 
