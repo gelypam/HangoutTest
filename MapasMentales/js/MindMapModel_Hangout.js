@@ -9,6 +9,7 @@
  * methods directly or using the executeAction() method to perform NodeActions.
  * </pre>
  * 
+
  * @constructor
  * @param {mindmaps.EventBus} eventBus
  * @param {mindmaps.CommandRegistry} commandRegistry
@@ -141,7 +142,7 @@ mindmaps.MindMapModel = function(eventBus, commandRegistry, undoController) {
 	var doc = this.document;
 	var jsonString = doc.serialize();
 	alert("json " + jsonString);
-  gapi.hangout.data(kMAPA, jsonString);
+  gapi.hangout.data.setValue(kMAPA, jsonString);
   };
 
   /**
