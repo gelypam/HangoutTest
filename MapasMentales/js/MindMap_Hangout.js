@@ -6,44 +6,7 @@
  * @param {mindmaps.Node} [root]
  */
 
-/*INICIA HANGOUT*/
-var kMAPA = "mapaModel";
 
-function onStateChange() {
-  console.log("entró en onStateChange");
-  var existe = gapi.hangout.data.getValue(kMAPA);
-  if(existe){
-    console.log("entró a existe");
-    pintaMapa(existe);
-  }
-};
-
-function pintaMapa(json) {  
-    return mindmaps.MindMap.fromObject(JSON.parse(json)); 
-}
-
-gapi.hangout.data.onStateChanged.add(onStateChange);
-
-
-gapi.hangout.onApiReady.add(function(eventObj) 
-{ 
-  var SOPITA = gapi.hangout.data.getValue(kSOPA);
-  try { 
-      if (eventObj.isApiReady) { 
-        console.log("entró en isApiReady");
-        var existe = gapi.hangout.data.getValue(kMAPA);
-        if(existe){
-          console.log("entró a existe");
-          pintaMapa(existe);
-        }          
-      } 
-    }
-  catch (e) { 
-      console.log(e.stack); 
-  } 
-});
-
-/*TERMINA HANGOUT*/
 
 mindmaps.MindMap = function(root) {
   /**
