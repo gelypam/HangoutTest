@@ -617,18 +617,24 @@ gapi.hangout.onApiReady.add(function(eventObj)
 	    if (eventObj.isApiReady) { 
 	      console.log("isApiReady"); 
 	      if(SOPITA){
+	      		var ss, ff,f;
 	      		var filas = gapi.hangout.data.getKeys();
 	      		console.log("entro en SOPITA" + filas.length);	      		
 	      		for(var i=0; i < filas.length; i++){
-
-	      			console.log("filas " + i);
-	      			if((filas[i].substring(0,4)) == kFILA)
-	      				console.log("gapiFILA: "+gapi.hangout.data.getValue(kFILA+i));
-	      				//console.log("kFILA: "+ filas[i].getValue());
+	      			if((filas[i].substring(0,4)) == kFILA){
+	      				f = gapi.hangout.data.getValue(kFILA+i);
+	      				console.log("gapiFILA: "+ f);
+	      				ff = f.split(",");
+	      				for(var j=0; j < ff.length; j++){
+	      					ss[i] = ff[j];
+	      					console.log(ss[i][j]);
+	      				}
+					}
+	      				
 	      		}
 	      		
-	      		//dibujaSopa(gapi.hangout.data.getValue(SOPA));
-	        	//startApp(); 
+	      		dibujaSopa(ss);
+	        	
 	        }
 	        else{
 	        	startApp();
