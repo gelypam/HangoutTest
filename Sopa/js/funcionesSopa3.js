@@ -616,17 +616,17 @@ gapi.hangout.onApiReady.add(function(eventObj)
 	try { 
 	    if (eventObj.isApiReady) { 
 	      console.log("isApiReady"); 
-	      if(SOPITA){
-	      		var ss, ff,f;
+	      if(SOPITA){	      		
 	      		var filas = gapi.hangout.data.getKeys();
 	      		console.log("entro en SOPITA" + filas.length);	      		
 	      		for(var i=0; i < filas.length; i++){
 	      			if((filas[i].substring(0,4)) == kFILA){
-	      				f = gapi.hangout.data.getValue(kFILA+i);
+	      				var f = gapi.hangout.data.getValue(kFILA+i);
 	      				console.log("gapiFILA: "+ f);
-	      				ff = f.split(",");
+	      				var ff = f.split(",");
+	      				console.log("ff.length" + ff.length);
 	      				for(var j=0; j < ff.length; j++){
-	      					ss[i] = ff[j];
+	      					var ss[i][j] = ff[j];
 	      					console.log(ss[i][j]);
 	      				}
 					}
