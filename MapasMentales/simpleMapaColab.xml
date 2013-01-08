@@ -276,6 +276,10 @@ PRODUCTION -->
 </script>
 
 
+  <script>
+console.log("HOLA MUNDO!!!");
+</script>
+
 <script>
 /*INICIA HANGOUT*/
 var kMAPA = "mapaModel";
