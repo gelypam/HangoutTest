@@ -24,6 +24,7 @@ mindmaps.MindMapModel = function(eventBus, commandRegistry, undoController) {
    * @returns {mindmaps.Document} the current document.
    */
   this.getDocument = function() {
+	//alert("document");
     return this.document;
   };
 
@@ -49,11 +50,27 @@ mindmaps.MindMapModel = function(eventBus, commandRegistry, undoController) {
    */
   this.getMindMap = function() {
     if (this.document) {
-      return this.document.mindmap;
+      //return this.document.mindmap;
+	  /*var doc = this.document;
+	  var jsonString = doc.serialize();
+	  //alert("json" + jsonString);*/
+	  return this.document.mindmap;
     }
     return null;
   };
+  
+  /*this.obtenerJson = function() {
+	var doc = this.document;
+	var jsonString = doc.serialize();
+	 alert("json " + jsonString);
+  };*/
 
+  /*function obtenerJson(){
+	var doc = this.document;
+	var jsonString = doc.serialize();
+	 alert("json " + jsonString);
+  }*/
+  
   /**
    * Initialise.
    * 
@@ -106,6 +123,7 @@ mindmaps.MindMapModel = function(eventBus, commandRegistry, undoController) {
    * @param {mindmaps.Node} parent
    */
   this.createNode = function(node, parent) {
+	alert("agrega nodo al mapa");
     var map = this.getMindMap();
     if (!(node && parent)) {
       parent = this.selectedNode;
@@ -116,6 +134,10 @@ mindmaps.MindMapModel = function(eventBus, commandRegistry, undoController) {
     }
 
     this.executeAction(action);
+	//obtener documento y serializarlo para obtener un json
+	var doc = this.document;
+	var jsonString = doc.serialize();
+	alert("json " + jsonString);
   };
 
   /**
