@@ -98,8 +98,8 @@ function startApp(){
 		}*/
 	},2000);
 	
-
-});
+}
+//});
 
 /*function mrespuestas(respuestas){
 	for (i = 0; i < 10; i++) {
