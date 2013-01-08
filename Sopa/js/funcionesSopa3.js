@@ -78,6 +78,7 @@ function startApp(){
 		acomodaPalabras(sopa, respuestas, w9);
 		acomodaPalabras(sopa, respuestas, w10);
 		
+		//recupera respuestas[] para guardarlo en los shared states
 		console.log(respuestas.length);
 		for(var i=0; i < respuestas.length; i++){
 			console.log(respuestas[i].length );
@@ -93,7 +94,7 @@ function startApp(){
 
 		//Comenta esta función si sólo quieres ver las 10 palabras que están dentro de la sopa de letras
 		rellena(sopa);
-		dibujaSopa(sopa);	
+		dibujaSopa(sopa);
 		
 		
 		/*rr="";
@@ -566,7 +567,7 @@ function acomodaPalabras(sopa, respuestas, palabra){
 	}while(acomodada != true);
 
 
-	//recupera respuestas[] para guardarlo en los shared states
+	
 	
 }
 
@@ -623,6 +624,38 @@ function onStateChange() {
 	}
 };
 
+ function stateToMatrix(kSTATE){
+ 	var ss = [];
+	var n = 0;
+	var filas = gapi.hangout.data.getKeys();
+	console.log("entro en SOPITA" + filas.length);	 
+
+	if(kSTATE == kFILA){	
+		for(var i=0; i < filas.length; i++){	      			      			
+			if((filas[i].substring(0,4)) == kFILA){
+				var f = gapi.hangout.data.getValue(kSTATE+n);
+				console.log("gapiFILA: "+ f);	      				
+				ss[i] = f.split(",");
+				console.log(ss[i]);
+				n++;
+			}
+		}
+	}
+
+	if(kSTATE == kRESPUESTA_FILA){
+		for(var i=0; i < filas.length; i++){
+			if((filas[i].substring(0,14)) == kRESPUESTA_FILA){
+				var f = gapi.hangout.data.getValue(kRESPUESTA_FILA+n);				
+				ss[n][0] = n+1;
+				ss[n][1] = f.split(",");
+				n++;
+			}
+		}
+	}
+
+	return ss;
+ }
+
 gapi.hangout.onApiReady.add(function(eventObj) 
 { 
 	var SOPITA = gapi.hangout.data.getValue(kSOPA);
@@ -630,23 +663,10 @@ gapi.hangout.onApiReady.add(function(eventObj)
 	    if (eventObj.isApiReady) { 
 	      console.log("isApiReady"); 
 	      if(SOPITA){	    
-	      		var ss = [];
-	      		var filas = gapi.hangout.data.getKeys();
-	      		console.log("entro en SOPITA" + filas.length);	      		
-	      		for(var i=0; i < filas.length; i++){
-	      			if((filas[i].substring(0,4)) == kFILA){
-	      				var f = gapi.hangout.data.getValue(kFILA+i);
-	      				console.log("gapiFILA: "+ f);
-	      				
-	      				ss[i] = f.split(",");
-	      				console.log(ss[i]);
-	      				
-					}
-	      				
-	      		}
 	      		
-	      		dibujaSopa(ss);
-	        	
+	      		
+	      		dibujaSopa(stateToMatrix(kFILA));
+	        	respuestas = stateToMatrix(kRESPUESTA_FILA);
 	        }
 	        else{
 	        	startApp();
@@ -659,5 +679,7 @@ gapi.hangout.onApiReady.add(function(eventObj)
 	    console.log(e.stack); 
 	} 
 }); 
+
+
 
 gapi.hangout.data.onStateChanged.add(onStateChange);
