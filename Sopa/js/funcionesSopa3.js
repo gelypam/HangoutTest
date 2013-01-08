@@ -13,7 +13,8 @@ var kACIERTOS = 'aciertos';
 var kCLICKEADOS = 'clickeados';
 var kSOPA = 'sopa';
 var kFILA = 'fila';
-var kRESPUESTA_FILA = 'respuesta_fila'
+var kRESPUESTA_FILA = 'respuesta_fila';
+var kRESULTADOS = 'resultados';
 
 //***********************************+//
 //Esta variable es un arreglo con número de la preguntas/palabras que ya se encontraron en la sopa de letras
@@ -78,13 +79,20 @@ function startApp(){
 		acomodaPalabras(sopa, respuestas, w9);
 		acomodaPalabras(sopa, respuestas, w10);
 		
+		//recupera resultados[] para guardarlo en los shared states
+		var result = "";
+		for(var i=0; i < resultados.length; i++){
+			result += resultados[i] + ",";
+		}
+
+
 		//recupera respuestas[] para guardarlo en los shared states
 		console.log(respuestas.length);
 		for(var i=0; i < respuestas.length; i++){
 			console.log(respuestas[i].length );
 			var rfila = '';
 			for(var j=0; j < respuestas[i][1].length; j++){
-				console.log(respuestas[i][1][j]);
+				//console.log(respuestas[i][1][j]);
 				rfila += respuestas[i][1][j] + ",";
 			}
 			gapi.hangout.data.setValue(kRESPUESTA_FILA+i, rfila);
@@ -158,7 +166,7 @@ function dibujaSopa(sopa){
 //Función que se manda a llamar cada que das clic a una letra.  Verifica que la letra pertenezca a una palabra
 function validaPalabra(ob){
 	ob.addClass("Usado");
-	console.log("validaPalabra" - ob);
+	console.log("validaPalabra" + ob);
 	$("#letras li a").each(function () {
 		
 		for (j = 0; j < 10; j ++) {
@@ -653,10 +661,17 @@ function onStateChange() {
 				ss[n]= new Array(2);	
 				ss[n][0] = n+1;
 				ss[n][1] = f.split(",");
+				ss[n][1] = ss[n][1].splice(ss[n][1].length,1);
 				n++;
 			}
 		}
 		respuestas = ss;
+	}
+
+	if(kSTATE == kRESULTADOS){
+		for(var i=0; i < resultados; i++){
+			console.log(resultados[i]);
+		}
 	}
 
 	
@@ -672,6 +687,7 @@ gapi.hangout.onApiReady.add(function(eventObj)
 	      		
 	      		stateToMatrix(kFILA);
 	      		stateToMatrix(kRESPUESTA_FILA);
+	      		stateToMatrix(kRESULTADOS);
 	        }
 	        else{
 	        	startApp();
