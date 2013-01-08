@@ -78,6 +78,16 @@ function startApp(){
 		acomodaPalabras(sopa, respuestas, w9);
 		acomodaPalabras(sopa, respuestas, w10);
 		
+		console.log(respuestas.length);
+		for(var i=0; i < respuestas.length; i++){
+			console.log(respuestas[i].length );
+			var rfila = '';
+			for(var j=0; j < respuestas[i][1].length; j++){
+				console.log(respuestas[i][1][j]);
+				rfila += respuestas[i][1][j] + ",";
+			}
+			gapi.hangout.data.setValue(kRESPUESTA_FILA+i, rfila);
+		}
 		
 		//*****************************************************+//
 
@@ -557,16 +567,7 @@ function acomodaPalabras(sopa, respuestas, palabra){
 
 
 	//recupera respuestas[] para guardarlo en los shared states
-	console.log(respuestas.length);
-	for(var i=0; i < respuestas.length; i++){
-		console.log(respuestas[i].length );
-		var rfila = '';
-		for(var j=0; j < respuestas[i][1].length; j++){
-			console.log(respuestas[i][1][j]);
-			rfila += respuestas[i][1][j] + ",";
-		}
-		gapi.hangout.data.setValue(kRESPUESTA_FILA+i, rfila);
-	}
+	
 }
 
 //Funciones para mostrar los botones para las 10 preguntas
