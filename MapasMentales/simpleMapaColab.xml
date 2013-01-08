@@ -34,7 +34,20 @@ PRODUCTION -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 <script src="http://api.filepicker.io/v0/filepicker.js"></script>
 
-<script>gapi.hangout.data.onStateChanged.add(onStateChange);</script>
+<script>
+function onStateChange() {
+  console.log("entró en onStateChange");
+  var existe = gapi.hangout.data.getValue('mapaModel');
+  if(existe){
+    console.log("existe: " + existe);
+    pintaMapa(existe);
+  }
+};
+
+  gapi.hangout.data.onStateChanged.add(onStateChange);
+
+
+</script>
 
 
 
@@ -89,14 +102,7 @@ PRODUCTION -->
   <script>console.log("MindMapModel_Hangout executed");</script>
   <script>
 
-function onStateChange() {
-  console.log("entró en onStateChange");
-  var existe = gapi.hangout.data.getValue('mapaModel');
-  if(existe){
-    console.log("existe: " + existe);
-    pintaMapa(existe);
-  }
-};
+
 
 function pintaMapa(json) {  
   return mindmaps.Document.fromJSON(json);    
