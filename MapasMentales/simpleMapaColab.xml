@@ -200,55 +200,8 @@ PRODUCTION -->
 </tr>
 </script>
 
-<script id="template-open" type="text/x-jquery-tmpl">
-<div id="open-dialog" class="file-dialog" title="Abrir mapa conceptual">
-  <h1>Desde la Nube: Dropbox y más</h1>
-  <p>Abre, guarda y comparte tu mapa conceptual en línea en tu almacenamiento en la nube favorito.
-   Soporta Google Drive, Dropbox y más! Powered by <a href="http://www.filepicker.io" target="_blank">filepicker.io</a>.</p>
-  <button id="button-open-cloud">Abrir</button>
-  <span class="cloud-loading">Cargando...</span>
-  <span class="cloud-error error"></span>
-  <div class="seperator"></div>
-  <h1>Almacenamiento local</h1>
-  <p>Esta es una lista de todos los mapas que han sido guardados en el almacenamiento local de tu navegador. Da clic sobre el título de un mapa para abrirlo.</p>
-  <table class="localstorage-filelist">
-    <thead>
-      <tr>
-        <th class="title">Titulo</th>
-        <th class="modified">Última modificación</th>
-        <th class="delete"></th>
-      </tr>
-    </thead>
-    <tbody class="document-list"></tbody>
-  </table>
-  <div class="seperator"></div>
-  <h1>Desde un archivo</h1>
-  <p>Selecciona un mapa conceptual desde alguna ubicación de tu equipo.</p>
-  <div class="file-chooser">
-    <input type="file" />
-  </div>
-</div>
-</script>
 
-<script id="template-save" type="text/x-jquery-tmpl">
-<div id="save-dialog" class="file-dialog" title="Guardar">
-  <h1>En la Nube: Dropbox y más</h1>
-  <p>Abre, guarda y comparte tu mapa conceptual en línea en tu almacenamiento en la nube favorito.
-   Soporta Google Drive, Dropbox y más! Powered by <a href="http://www.filepicker.io" target="_blank">filepicker.io</a>.</p>
-  <button id="button-save-cloudstorage">Guardar</button>
-  <span class="cloud-error error"></span>
-  <div class="seperator"></div>
-  <h1>Almacenamiento local</h1>
-  <p>Puedes guardar tu mapa conceptual en el almacenamiento local de tu navegador.</p>
-  <button id="button-save-localstorage">Guardar</button>
-  <input type="checkbox" class="autosave" id="checkbox-autosave-localstorage">
-  <label for="checkbox-autosave-localstorage">Guardar automáticamente cada minuto.</label>
-  <div class="seperator"></div>
-  <h1>En archivo</h1>
-  <p>Guardar el mapa conceptual como un archivo en tu equipo.</p>
-  <div id="button-save-hdd">Save</div>
-</div>
-</script>
+
 
 <script id="template-navigator" type="text/x-jquery-tmpl">
 <div id="navigator">
