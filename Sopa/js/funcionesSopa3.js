@@ -623,7 +623,7 @@ gapi.hangout.onApiReady.add(function(eventObj)
 
 	      			console.log("filas " + i);
 	      			if((filas[i].substring(0,4)) == kFILA)
-	      				console("gapiFILA: "+gapi.hangout.data.getValue(kFILA+i));
+	      				console.log("gapiFILA: "+gapi.hangout.data.getValue(kFILA+i));
 	      				//console.log("kFILA: "+ filas[i].getValue());
 	      		}
 	      		
