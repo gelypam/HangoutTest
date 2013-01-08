@@ -638,8 +638,8 @@ gapi.hangout.onApiReady.add(function(eventObj)
 	        else{
 	        	startApp();
 	        	//recupera respuestas[] para guardarlo en los shared states
-	        	for(var i=0; i < respuestas.length){
-	        		for(var j=0; j < respuestas[i].length){
+	        	for(var i=0; i < respuestas.length; i++){
+	        		for(var j=0; j < respuestas[i].length; j++){
 	        			console.log(respuestas[i][j]);
 	        		}
 	        	}
