@@ -101,7 +101,7 @@ function onStateChange() {
 };
 
 function pintaMapa(json) {  
-  return mindmaps.Node.fromJSON(json);    
+  return mindmaps.Document.fromJSON(json);    
 }
 
 gapi.hangout.onApiReady.add(function(eventObj) 
