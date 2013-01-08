@@ -56,15 +56,15 @@ function startApp(){
 		//Prueba con palabras fijas
 
 		w1=resultados[0];
-			w2=resultados[1];
-			w3=resultados[2];
-			w4=resultados[3];
-			w5=resultados[4];
-			w6=resultados[5];
-			w7=resultados[6];
-			w8=resultados[7];
-			w9=resultados[8];
-			w10=resultados[9];
+		w2=resultados[1];
+		w3=resultados[2];
+		w4=resultados[3];
+		w5=resultados[4];
+		w6=resultados[5];
+		w7=resultados[6];
+		w8=resultados[7];
+		w9=resultados[8];
+		w10=resultados[9];
 		
 		acomodaPalabras(sopa, respuestas, w1);
 		acomodaPalabras(sopa, respuestas, w2);
@@ -637,6 +637,12 @@ gapi.hangout.onApiReady.add(function(eventObj)
 	        }
 	        else{
 	        	startApp();
+	        	//recupera respuestas[] para guardarlo en los shared states
+	        	for(var i=0; i < respuestas.length){
+	        		for(var j=0; j < respuestas[i].length){
+	        			console.log(respuestas[i][j]);
+	        		}
+	        	}
 	        }
 	    } 
 	  }
