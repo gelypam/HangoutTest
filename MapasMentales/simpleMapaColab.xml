@@ -125,6 +125,7 @@ gapi.hangout.data.onStateChanged.add(onStateChange);
   <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/ApplicationController.js"></script>
   <script>console.log("aplicationController executed");</script>
   <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/MindMapModel_Hangout.js"></script>
+  <script>console.log("MindMapModel_Hangout executed");</script>
   <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/NewDocument.js"></script>
   <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/OpenDocument.js"></script>
   <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/SaveDocument.js"></script>
