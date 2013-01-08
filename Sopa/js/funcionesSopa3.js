@@ -650,7 +650,7 @@ function onStateChange() {
 			if((filas[i].substring(0,14)) == kRESPUESTA_FILA){
 				var f = gapi.hangout.data.getValue(kRESPUESTA_FILA+n);		
 				console.log("gapiFILA: "+ f);
-				respuestas[n]= new Array(2);	
+				ss[n]= new Array(2);	
 				ss[n][0] = n+1;
 				ss[n][1] = f.split(",");
 				n++;
