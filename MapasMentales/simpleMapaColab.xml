@@ -52,10 +52,10 @@ function onStateChange() {
 };
 
 function pintaMapa(json) {  
-    //return mindmaps.MindMap.fromObject(JSON.parse(json)); 
+    return mindmaps.MindMap.fromObject(JSON.parse(json)); 
 }
 
-gapi.hangout.onApiReady.add(function() 
+gapi.hangout.onApiReady.add(function(eventObj) 
 {   
   console.log("entró en isApiReady");
   try {       
