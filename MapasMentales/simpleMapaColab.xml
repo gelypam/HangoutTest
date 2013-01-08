@@ -140,7 +140,7 @@ gapi.hangout.onApiReady.add(function(eventObj)
   <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/PrintController.js"></script>
   <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/ExportMap.js"></script>
   <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/AutoSaveController.js"></script>
-  
+  <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/FilePicker.js"></script>
   <!-- JS:LIB:END -->
 
   <!-- PRODUCTION 
