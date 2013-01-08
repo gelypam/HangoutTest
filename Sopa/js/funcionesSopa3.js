@@ -624,7 +624,7 @@ gapi.hangout.onApiReady.add(function(eventObj)
 	      			if((filas[i].substring(0,4)) == kFILA){
 	      				var f = gapi.hangout.data.getValue(kFILA+i);
 	      				console.log("gapiFILA: "+ f);
-	      				console.log("ff.length" + ff.length);
+	      				
 	      				ss[i] = f.split(",");
 	      				console.log(ss[i]);
 	      				
