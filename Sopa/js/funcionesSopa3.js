@@ -645,9 +645,12 @@ function onStateChange() {
 	}
 
 	if(kSTATE == kRESPUESTA_FILA){
+		ss=[][];
 		for(var i=0; i < filas.length; i++){
 			if((filas[i].substring(0,14)) == kRESPUESTA_FILA){
-				var f = gapi.hangout.data.getValue(kRESPUESTA_FILA+n);				
+				var f = gapi.hangout.data.getValue(kRESPUESTA_FILA+n);		
+				console.log("gapiFILA: "+ f);
+				console.log("ss: " + ss);		
 				ss[n][0] = n+1;
 				ss[n][1] = f.split(",");
 				n++;
