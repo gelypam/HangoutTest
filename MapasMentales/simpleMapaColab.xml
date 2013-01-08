@@ -34,7 +34,7 @@ PRODUCTION -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 <script src="http://api.filepicker.io/v0/filepicker.js"></script>
 
-
+<script>gapi.hangout.data.onStateChanged.add(onStateChange);</script>
 
 
 
@@ -119,7 +119,7 @@ gapi.hangout.onApiReady.add(function(eventObj)
   } 
 });
 
-gapi.hangout.data.onStateChanged.add(onStateChange);
+
 
 </script>
 
