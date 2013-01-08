@@ -142,8 +142,9 @@ function dibujaSopa(sopa){
 	for (i = 0; i < 13; i++) {
 		laFila = '';
 		for (j = 0; j <20; j++) {
-		laSopa += "<li><a id='"+(i.toString())+"_"+(j.toString())+"'>"+sopa[i][j]+"</a></li>";		
-		laFila += sopa[i][j] + ',';		
+			console.log(i + "," + j);
+			laSopa += "<li><a id='"+(i.toString())+"_"+(j.toString())+"'>"+sopa[i][j]+"</a></li>";		
+			laFila += sopa[i][j] + ',';		
 		};
 		gapi.hangout.data.setValue(kFILA+i,laFila);
 	}		
@@ -635,7 +636,7 @@ function onStateChange() {
 			if((filas[i].substring(0,4)) == kFILA){
 				var f = gapi.hangout.data.getValue(kSTATE+n);
 				console.log("gapiFILA: "+ f);	      				
-				ss[i] = f.split(",");
+				ss[n] = f.split(",");
 				console.log(ss[i]);
 				n++;
 			}
