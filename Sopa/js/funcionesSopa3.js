@@ -137,7 +137,7 @@ function rellena(sopa){
 
 //Función que dibuja la sopa de letras completa en la página html
 function dibujaSopa(sopa){
-	
+	console.log(sopa);
 	laSopa = "";
 	for (i = 0; i < 13; i++) {
 		laFila = '';
