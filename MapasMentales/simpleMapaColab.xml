@@ -24,6 +24,7 @@ PRODUCTION -->
 <!-- --------------INICIA REFERENCIAS Y SCRIPT ----------- -->  
 
 
+
 <meta charset="utf-8">
 <meta name="description" content="Mapa Conceptual" />
 <meta name="keywords" content="mind maps html5 mindmaps offline easy intuitive" />
@@ -33,6 +34,50 @@ PRODUCTION -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 <script src="http://api.filepicker.io/v0/filepicker.js"></script>
 
+  <script>
+console.log("HOLA MUNDO!!!");
+</script>
+
+<script>
+/*INICIA HANGOUT*/
+var kMAPA = "mapaModel";
+
+function onStateChange() {
+  console.log("entró en onStateChange");
+  var existe = gapi.hangout.data.getValue(kMAPA);
+  if(existe){
+    console.log("entró a existe");
+    pintaMapa(existe);
+  }
+};
+
+function pintaMapa(json) {  
+    //return mindmaps.MindMap.fromObject(JSON.parse(json)); 
+}
+
+gapi.hangout.onApiReady.add(function() 
+{   
+  console.log("entró en isApiReady");
+  try {       
+      if (eventObj.isApiReady) { 
+        console.log("entró en isApiReady");
+        var existe = gapi.hangout.data.getValue(kMAPA);
+        if(existe){
+          console.log("entró a existe");
+          pintaMapa(existe);
+        }          
+      } 
+    }
+  catch (e) { 
+      console.log(e.stack); 
+  } 
+});
+
+gapi.hangout.data.onStateChanged.add(onStateChange);
+
+/*TERMINA HANGOUT*/
+
+</script>
 
 
   <!-- JS:LIB:BEGIN -->
@@ -276,50 +321,7 @@ PRODUCTION -->
 </script>
 
 
-  <script>
-console.log("HOLA MUNDO!!!");
-</script>
 
-<script>
-/*INICIA HANGOUT*/
-var kMAPA = "mapaModel";
-
-function onStateChange() {
-  console.log("entró en onStateChange");
-  var existe = gapi.hangout.data.getValue(kMAPA);
-  if(existe){
-    console.log("entró a existe");
-    pintaMapa(existe);
-  }
-};
-
-function pintaMapa(json) {  
-    //return mindmaps.MindMap.fromObject(JSON.parse(json)); 
-}
-
-gapi.hangout.onApiReady.add(function() 
-{   
-  console.log("entró en isApiReady");
-  try {       
-      if (eventObj.isApiReady) { 
-        console.log("entró en isApiReady");
-        var existe = gapi.hangout.data.getValue(kMAPA);
-        if(existe){
-          console.log("entró a existe");
-          pintaMapa(existe);
-        }          
-      } 
-    }
-  catch (e) { 
-      console.log(e.stack); 
-  } 
-});
-
-gapi.hangout.data.onStateChanged.add(onStateChange);
-
-/*TERMINA HANGOUT*/
-
-</script>
 
 <!-- -------------TERMINA REFERENCIAS o SCRIPT-------------- -->
 
