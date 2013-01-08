@@ -150,7 +150,7 @@ function dibujaSopa(sopa){
 	for (i = 0; i < 13; i++) {
 		laFila = '';
 		for (j = 0; j <20; j++) {
-			console.log(i + "," + j);
+			//console.log(i + "," + j);
 			laSopa += "<li><a id='"+(i.toString())+"_"+(j.toString())+"'>"+sopa[i][j]+"</a></li>";		
 			laFila += sopa[i][j] + ',';		
 		};
@@ -660,8 +660,8 @@ function onStateChange() {
 				console.log("gapiFILA: "+ f);
 				ss[n]= new Array(2);	
 				ss[n][0] = n+1;
-				ss[n][1] = f.split(",");
-				ss[n][1] = ss[n][1].splice(ss[n][1].length,1);
+				ss[n][1] = f.split(",");	
+				delete ss[n][1][ss[n][1].length];	
 				n++;
 			}
 		}
