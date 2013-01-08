@@ -628,7 +628,7 @@ function onStateChange() {
  	var ss = [];
 	var n = 0;
 	var filas = gapi.hangout.data.getKeys();
-	console.log("entro en SOPITA" + filas.length);	 
+	console.log("entro en SOPITA " + filas.length);	 
 
 	if(kSTATE == kFILA){	
 		for(var i=0; i < filas.length; i++){	      			      			
@@ -640,6 +640,7 @@ function onStateChange() {
 				n++;
 			}
 		}
+		dibujaSopa(ss);
 	}
 
 	if(kSTATE == kRESPUESTA_FILA){
@@ -651,9 +652,10 @@ function onStateChange() {
 				n++;
 			}
 		}
+		respuestas = ss;
 	}
 
-	return ss;
+	
  }
 
 gapi.hangout.onApiReady.add(function(eventObj) 
@@ -664,13 +666,13 @@ gapi.hangout.onApiReady.add(function(eventObj)
 	      console.log("isApiReady"); 
 	      if(SOPITA){	    
 	      		
-	      		
-	      		dibujaSopa(stateToMatrix(kFILA));
-	        	respuestas = stateToMatrix(kRESPUESTA_FILA);
+	      		stateToMatrix(kFILA);
+	      		stateToMatrix(kRESPUESTA_FILA);
 	        }
 	        else{
 	        	startApp();
 	        	
+
 
 	        }
 	    } 
