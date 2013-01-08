@@ -93,7 +93,7 @@ var kMAPA = "mapaModel";
 
 function onStateChange() {
   console.log("entró en onStateChange");
-  var existe = gapi.hangout.data.getValue(mapaModel);
+  var existe = gapi.hangout.data.getValue('mapaModel');
   if(existe){
     console.log("existe: " + existe);
     pintaMapa(existe);
@@ -109,7 +109,7 @@ gapi.hangout.onApiReady.add(function(eventObj)
   try {       
       if (eventObj.isApiReady) { 
         console.log("entró en isApiReady");
-        var existe = gapi.hangout.data.getValue(mapaModel);
+        var existe = gapi.hangout.data.getValue('mapaModel');
         if(existe){
           console.log("entró a existe");
           pintaMapa(existe);
