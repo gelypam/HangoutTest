@@ -158,7 +158,7 @@ function dibujaSopa(sopa){
 //Función que se manda a llamar cada que das clic a una letra.  Verifica que la letra pertenezca a una palabra
 function validaPalabra(ob){
 	ob.addClass("Usado");
-	console.log(ob);
+	console.log("validaPalabra" - ob);
 	$("#letras li a").each(function () {
 		
 		for (j = 0; j < 10; j ++) {
