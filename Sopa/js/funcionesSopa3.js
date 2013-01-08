@@ -6,12 +6,13 @@ var numPalabras=0;
 var aciertos=0;
 
 /*VARIABLES GAPI.HANGOUT.DATA*/
-var SELECCIONADO = 'selected';
-var CONTADOR_PALABRA = 'contador_palabra';
-var PALABRA_ENCONTRADA = 'palabra_encontrada';
-var ACIERTOS = 'aciertos';
-var CLICKEADOS = 'clickeados';
-var SOPA = 'sopa';
+var kSELECCIONADO = 'selected';
+var kCONTADOR_PALABRA = 'contador_palabra';
+var kPALABRA_ENCONTRADA = 'palabra_encontrada';
+var kACIERTOS = 'aciertos';
+var kCLICKEADOS = 'clickeados';
+var kSOPA = 'sopa';
+var kFILA = 'fila'
 
 
 //***********************************+//
@@ -124,17 +125,19 @@ function rellena(sopa){
 
 //Función que dibuja la sopa de letras completa en la página html
 function dibujaSopa(sopa){
-	gapi.hangout.data.setValue(SOPA,sopa);
+	
 	laSopa = "";
 	for (i = 0; i < 13; i++) {
+		laFila = '';
 		for (j = 0; j <20; j++) {
 		laSopa += "<li><a id='"+(i.toString())+"_"+(j.toString())+"'>"+sopa[i][j]+"</a></li>";		
+		laFila += sopa[i][j] + ',';		
 		};
-	}			
+		gapi.hangout.data.setValue(kFILA+sopa[i],laFila);
+	}		
+	gapi.hangout.data.setValue(SOPA,'dibujada');
 	$("#letras").append(laSopa);
-	$("#letras li a").on("click", function(){
-		
-		
+	$("#letras li a").on("click", function(){			
 		validaPalabra($(this));
 	});
 }
@@ -611,9 +614,15 @@ gapi.hangout.onApiReady.add(function(eventObj)
 	try { 
 	    if (eventObj.isApiReady) { 
 	      console.log("isApiReady"); 
-	      if(SOPITA.length>0)
-	      	dibujaSopa(gapi.hangout.data.getValue(SOPA));
-	            //startApp(); 
+	      if(SOPITA){
+	      		var filas = gapi.hangout.data.getKeys();
+	      		for(var i; i < filas.length; i++){
+	      			console.log("kFILA: "+ filas[i].getValue());
+	      		}
+	      		
+	      		//dibujaSopa(gapi.hangout.data.getValue(SOPA));
+	        	//startApp(); 
+	        }
 	    } 
 	  }
 	catch (e) { 
