@@ -622,9 +622,9 @@ gapi.hangout.onApiReady.add(function(eventObj)
 	      		for(var i=0; i < filas.length; i++){
 
 	      			console.log("filas " + i);
-	      			if((filas[i].getValue().substring(0,5)) == kFILA)
+	      			if((filas[i].substring(0,4)) == kFILA)
 	      				console("gapiFILA: "+gapi.hangout.data.getValue(kFILA+i));
-	      				console.log("kFILA: "+ filas[i].getValue());
+	      				//console.log("kFILA: "+ filas[i].getValue());
 	      		}
 	      		
 	      		//dibujaSopa(gapi.hangout.data.getValue(SOPA));
