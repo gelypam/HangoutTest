@@ -12,7 +12,8 @@ var kPALABRA_ENCONTRADA = 'palabra_encontrada';
 var kACIERTOS = 'aciertos';
 var kCLICKEADOS = 'clickeados';
 var kSOPA = 'sopa';
-var kFILA = 'fila'
+var kFILA = 'fila';
+var kRESPUESTA_FILA = 'respuesta_fila'
 
 //***********************************+//
 //Esta variable es un arreglo con número de la preguntas/palabras que ya se encontraron en la sopa de letras
@@ -554,7 +555,17 @@ function acomodaPalabras(sopa, respuestas, palabra){
 		
 	}while(acomodada != true);
 
-	
+
+	//recupera respuestas[] para guardarlo en los shared states
+	console.log(respuestas.length);
+	for(var i=0; i < respuestas.length; i++){
+		console.log(respuestas[i]);
+		for(var j=0; j < respuestas[i].length; j++){
+			console.log(respuestas[i][j]);
+			var rfila += respuestas[i][j] + ",";
+		}
+		gapi.hangout.data.setValue(kRESPUESTA_FILA+i, rfila);
+	}
 }
 
 //Funciones para mostrar los botones para las 10 preguntas
@@ -637,14 +648,8 @@ gapi.hangout.onApiReady.add(function(eventObj)
 	        }
 	        else{
 	        	startApp();
-	        	//recupera respuestas[] para guardarlo en los shared states
-	        	console.log(respuestas.length);
-	        	for(var i=0; i < respuestas.length; i++){
-	        		console.log(respuestas[i].length);
-	        		for(var j=0; j < respuestas[i].length; j++){
-	        			console.log(respuestas[i][j]);
-	        		}
-	        	}
+	        	
+
 	        }
 	    } 
 	  }
