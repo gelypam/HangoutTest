@@ -113,7 +113,7 @@ gapi.hangout.onApiReady.add(function(eventObj)
         var existe = gapi.hangout.data.getValue(kMAPA);
         if(existe){
           console.log("entró a existe");
-          //pintaMapa(existe);
+          pintaMapa(existe);
         }          
       } 
     }
