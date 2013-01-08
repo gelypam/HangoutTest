@@ -13,7 +13,6 @@ var kACIERTOS = 'aciertos';
 var kCLICKEADOS = 'clickeados';
 var kSOPA = 'sopa';
 var kFILA = 'fila'
-var SOPITA;
 
 //***********************************+//
 //Esta variable es un arreglo con número de la preguntas/palabras que ya se encontraron en la sopa de letras
@@ -21,84 +20,84 @@ var SOPITA;
 var preguntasContestadas = new Array();
 //*****************************************************+//
 
-$(document).on('ready', function(){
+//$(document).on('ready', function(){
+function startApp(){	
 	
-	if(!SOPITA){
-		
-		CargaPreguntas();
+	
+	CargaPreguntas();
 
-		palabra = "EjemplomasT";
-		creaSopa(sopa);
+	palabra = "EjemplomasT";
+	creaSopa(sopa);
 
-		for(i = 0; i < 10; i++) {
-			respuestas[i] = "*";
-		};	
+	for(i = 0; i < 10; i++) {
+		respuestas[i] = "*";
+	};	
 
-		//*****************************************************+//
-		//AQUI METER LAS 10 PALABRAS EXTRAIDAS DE LA BD
-		//Es muy importante validar que las palabras no contengan mas de 13 letras , ya que no cabrian verticalmente y cuasaría errores
-		//Mete las palabras en MAYUSCULAS, ya que así se generan las letras aleatorias de relleno y además se ve mejor.
-		setTimeout(function() {
-			/*for(i=0;i<10;i++){
-				console.log("tamaño: " + resultados.length);
-				console.log("inicia ciclo");
-				console.log("numero de palabra: "+ i+" ....");
-				if (resultados[i]=="LAN") {
-					
-					console.log("-"+resultados[i]+"-");
-					//acomodaPalabras(sopa, respuestas, "LANA");
-				}else{
-					console.log("*"+resultados[i]+"*");
-					//acomodaPalabras(sopa, respuestas, resultados[i]);
-				}
+	//*****************************************************+//
+	//AQUI METER LAS 10 PALABRAS EXTRAIDAS DE LA BD
+	//Es muy importante validar que las palabras no contengan mas de 13 letras , ya que no cabrian verticalmente y cuasaría errores
+	//Mete las palabras en MAYUSCULAS, ya que así se generan las letras aleatorias de relleno y además se ve mejor.
+	setTimeout(function() {
+		/*for(i=0;i<10;i++){
+			console.log("tamaño: " + resultados.length);
+			console.log("inicia ciclo");
+			console.log("numero de palabra: "+ i+" ....");
+			if (resultados[i]=="LAN") {
 				
+				console.log("-"+resultados[i]+"-");
+				//acomodaPalabras(sopa, respuestas, "LANA");
+			}else{
+				console.log("*"+resultados[i]+"*");
+				//acomodaPalabras(sopa, respuestas, resultados[i]);
 			}
-			*/
-			//Prueba con palabras fijas
+			
+		}
+		*/
+		//Prueba con palabras fijas
 
-			w1=resultados[0];
-				w2=resultados[1];
-				w3=resultados[2];
-				w4=resultados[3];
-				w5=resultados[4];
-				w6=resultados[5];
-				w7=resultados[6];
-				w8=resultados[7];
-				w9=resultados[8];
-				w10=resultados[9];
-			
-			acomodaPalabras(sopa, respuestas, w1);
-			acomodaPalabras(sopa, respuestas, w2);
-			acomodaPalabras(sopa, respuestas, w3);
-			acomodaPalabras(sopa, respuestas, w4);
-			acomodaPalabras(sopa, respuestas, w5);
-			acomodaPalabras(sopa, respuestas, w6);
-			acomodaPalabras(sopa, respuestas, w7);
-			acomodaPalabras(sopa, respuestas, w8);
-			acomodaPalabras(sopa, respuestas, w9);
-			acomodaPalabras(sopa, respuestas, w10);
-			
-			
-			//*****************************************************+//
+		w1=resultados[0];
+			w2=resultados[1];
+			w3=resultados[2];
+			w4=resultados[3];
+			w5=resultados[4];
+			w6=resultados[5];
+			w7=resultados[6];
+			w8=resultados[7];
+			w9=resultados[8];
+			w10=resultados[9];
+		
+		acomodaPalabras(sopa, respuestas, w1);
+		acomodaPalabras(sopa, respuestas, w2);
+		acomodaPalabras(sopa, respuestas, w3);
+		acomodaPalabras(sopa, respuestas, w4);
+		acomodaPalabras(sopa, respuestas, w5);
+		acomodaPalabras(sopa, respuestas, w6);
+		acomodaPalabras(sopa, respuestas, w7);
+		acomodaPalabras(sopa, respuestas, w8);
+		acomodaPalabras(sopa, respuestas, w9);
+		acomodaPalabras(sopa, respuestas, w10);
+		
+		
+		//*****************************************************+//
 
-			//Comenta esta función si sólo quieres ver las 10 palabras que están dentro de la sopa de letras
-			rellena(sopa);
-			dibujaSopa(sopa);	
-			
-			
-			/*rr="";
-			var ar = new Array();
-			for (i =0; i < 10; i++){
-				//respuestas[i][j] = "*";
-				rr += "pos pal " + i.toString()+ ": ";
-				ar = respuestas[i][1];
-				for(k=0; k < ar.length; k++){
-					rr += ar[k] + " ";
-				}
-				rr += "---";
-			}*/
-		},2000);
-	}
+		//Comenta esta función si sólo quieres ver las 10 palabras que están dentro de la sopa de letras
+		rellena(sopa);
+		dibujaSopa(sopa);	
+		
+		
+		/*rr="";
+		var ar = new Array();
+		for (i =0; i < 10; i++){
+			//respuestas[i][j] = "*";
+			rr += "pos pal " + i.toString()+ ": ";
+			ar = respuestas[i][1];
+			for(k=0; k < ar.length; k++){
+				rr += ar[k] + " ";
+			}
+			rr += "---";
+		}*/
+	},2000);
+	
 
 });
 
@@ -613,11 +612,11 @@ function onStateChange() {
 
 gapi.hangout.onApiReady.add(function(eventObj) 
 { 
-	SOPITA = gapi.hangout.data.getValue(kSOPA);
+	var SOPITA = gapi.hangout.data.getValue(kSOPA);
 	try { 
 	    if (eventObj.isApiReady) { 
 	      console.log("isApiReady"); 
-	      if(SOPITA == 'true'){
+	      if(SOPITA){
 	      		var filas = gapi.hangout.data.getKeys();
 	      		console.log("entro en SOPITA");
 	      		for(var i; i < filas.length; i++){
@@ -628,6 +627,9 @@ gapi.hangout.onApiReady.add(function(eventObj)
 	      		
 	      		//dibujaSopa(gapi.hangout.data.getValue(SOPA));
 	        	//startApp(); 
+	        }
+	        else{
+	        	startApp();
 	        }
 	    } 
 	  }
