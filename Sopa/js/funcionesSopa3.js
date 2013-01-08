@@ -135,7 +135,7 @@ function dibujaSopa(sopa){
 		};
 		gapi.hangout.data.setValue(kFILA+sopa[i],laFila);
 	}		
-	gapi.hangout.data.setValue(SOPA,'dibujada');
+	gapi.hangout.data.setValue(kSOPA,'dibujada');
 	$("#letras").append(laSopa);
 	$("#letras li a").on("click", function(){			
 		validaPalabra($(this));
@@ -186,7 +186,7 @@ function validaPalabra(ob){
             if (!esta) {
     			
     			seleccionados.push(elid);
-    			gapi.hangout.data.setValue(SELECCIONADO,elid);
+    			gapi.hangout.data.setValue(kSELECCIONADO,elid);
 
     			cc= new Array(10);
     			cc[0]=0;
@@ -603,14 +603,14 @@ function PreguntaContestada(i){
 
 
 function onStateChange(eventObj) {
-	var s = gapi.hangout.data.getValue(SELECCIONADO)
+	var s = gapi.hangout.data.getValue(kSELECCIONADO)
   console.log(s+" - onStateChange function");  
   validaPalabra(s);  
 };
 
 gapi.hangout.onApiReady.add(function(eventObj) 
 { 
-	var SOPITA = gapi.hangout.data.getValue(SOPA);
+	var SOPITA = gapi.hangout.data.getValue(kSOPA);
 	try { 
 	    if (eventObj.isApiReady) { 
 	      console.log("isApiReady"); 
