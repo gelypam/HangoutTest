@@ -661,7 +661,7 @@ function onStateChange() {
 				ss[n]= new Array(2);	
 				ss[n][0] = n+1;
 				ss[n][1] = f.split(",");	
-				delete ss[n][1][ss[n][1].length];	
+				ss[n][1].pop();
 				n++;
 			}
 		}
