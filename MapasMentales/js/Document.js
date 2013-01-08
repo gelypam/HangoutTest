@@ -35,6 +35,7 @@ mindmaps.Document.fromJSON = function(json) {
  * @returns {mindmaps.Document}
  */
 mindmaps.Document.fromObject = function(obj) {
+  console.log("objeto Document" + obj);
   var doc = new mindmaps.Document();
   doc.id = obj.id;
   doc.title = obj.title;
