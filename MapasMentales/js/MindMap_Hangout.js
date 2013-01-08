@@ -5,13 +5,15 @@
  * @constructor
  * @param {mindmaps.Node} [root]
  */
- 
+
 /*INICIA HANGOUT*/
 var kMAPA = "mapaModel";
 
 function onStateChange() {
+  console.log("entró en onStateChange");
   var existe = gapi.hangout.data.getValue(kMAPA);
   if(existe){
+    console.log("entró a existe");
     pintaMapa(existe);
   }
 };
