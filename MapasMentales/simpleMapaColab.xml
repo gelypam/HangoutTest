@@ -34,9 +34,6 @@ PRODUCTION -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 <script src="http://api.filepicker.io/v0/filepicker.js"></script>
 
-  <script>
-console.log("HOLA MUNDO!!!");
-</script>
 
 <script>
 /*INICIA HANGOUT*/
@@ -64,7 +61,7 @@ gapi.hangout.onApiReady.add(function(eventObj)
         var existe = gapi.hangout.data.getValue(kMAPA);
         if(existe){
           console.log("entró a existe");
-          pintaMapa(existe);
+          //pintaMapa(existe);
         }          
       } 
     }
@@ -106,16 +103,27 @@ gapi.hangout.data.onStateChanged.add(onStateChange);
   <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/ClipboardController.js"></script>
   <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/ZoomController.js"></script>
   <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/ShortcutController.js"></script>
+  <script>console.log("ShortcutController executed");</script>
   <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/HelpController.js"></script>
+  <script>console.log("HelpController executed");</script>
   <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/FloatPanel.js"></script>
+  <script>console.log("CanvasView executed");</script>
   <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/Navigator.js"></script>
+  <script>console.log("Navigator executed");</script>
   <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/Inspector.js"></script>
+  <script>console.log("Inspector executed");</script>
   <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/ToolBar.js"></script>
+  <script>console.log("ToolBar executed");</script>
   <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/StatusBar.js"></script>
+  <script>console.log("StatusBar executed");</script>
   <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/CanvasDrawingTools.js"></script>
+  <script>console.log("CanvasDrawing executed");</script>
   <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/CanvasView.js"></script>
+    <script>console.log("CanvasView executed");</script>
   <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/CanvasPresenter.js"></script>
+    <script>console.log("CanvasPresenter executed");</script>
   <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/ApplicationController.js"></script>
+  <script>console.log("aplicationController executed");</script>
   <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/MindMapModel_Hangout.js"></script>
   <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/NewDocument.js"></script>
   <script src="https://raw.github.com/gelypam/HangoutTest/master/MapasMentales/js/OpenDocument.js"></script>
