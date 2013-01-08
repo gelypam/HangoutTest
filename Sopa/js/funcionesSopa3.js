@@ -616,8 +616,10 @@ gapi.hangout.onApiReady.add(function(eventObj)
 	      console.log("isApiReady"); 
 	      if(SOPITA == 'true'){
 	      		var filas = gapi.hangout.data.getKeys();
+	      		console.log("entro en SOPITA");
 	      		for(var i; i < filas.length; i++){
-	      			if((filas[i].getValue().substring(0,5)) == 'kFILA')
+	      			console.log("filas " + i);
+	      			if((filas[i].getValue().substring(0,5)) == kFILA)
 	      				console.log("kFILA: "+ filas[i].getValue());
 	      		}
 	      		
