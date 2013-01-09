@@ -668,7 +668,7 @@ function onStateChange() {
 				f = gapi.hangout.data.getValue(kSTATE+n);
 				console.log("gapiFILA: "+ f);	      				
 				ss[n] = f.split(",");
-				console.log(ss[n]);
+				//console.log(ss[n]);
 				n++;
 			}
 		}
@@ -724,7 +724,7 @@ function onStateChange() {
 	if(kSTATE == kSELECCIONADOS){
 		f = gapi.hangout.data.getValue(kSELECCIONADOS);
 		console.log(f);
-		if(f){
+		if(f.length>1){
 			ss = f.split();
 			ss.pop();
 			for(var i=1; i < ss.length; i++){
