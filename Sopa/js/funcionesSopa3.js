@@ -725,6 +725,7 @@ function onStateChange() {
 		f = gapi.hangout.data.getValue(kSELECCIONADOS);
 		console.log(f);
 		if(f){
+			console.log("entró quish quissh quissssh")
 			ss = f.split();
 			ss.pop();
 			for(var i=1; i < ss.length; i++){
