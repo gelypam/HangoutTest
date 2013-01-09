@@ -1,14 +1,14 @@
 @import url(http://fonts.googleapis.com/css?family=Paprika);
 .principal{
 	margin: 0 auto;
-	width: 700px;
+	width: 960px;
 }
 .ahorcado{
-	border-bottom: 0px solid #000;
+	border-bottom: 1px solid #000;
 }
 .contenedor_ahorcado{
 	background-image: url("../imagenes/baseahorcado.png");
-	height: 0px;
+	height: 200px;
 	width: 180px;
 }
 .monito{
@@ -63,25 +63,43 @@ h5, .Resultado {
 	border: 1px solid #DDD;
 	padding: 10px;
 }
+
+.lasPreguntas{
+	width: 32%;
+	background-color: #7F7F7F;
+	float: left;
+}
 .ContenedorJuego {
 	border-radius: 5px 5px 5px 5px;
 	-moz-border-radius: 5px 5px 5px 5px;
 	-webkit-border-radius: 5px 5px 5px 5px;
 	background: none repeat scroll 0 0 #FFFFFF;
 	border: 1px solid #CCCCCC;
-	margin: 0px 0;
-	padding: 0px 10px;
+	margin: 20px 0;
+	
 	overflow: hidden;
+	width: 100%;
+	float: left;
+
 }
 .ColumnaUno {
 	display: inline-block;
 	float: left;
-	width: 400px;
+	
+	border: 5px;
+	margin-top:10px; 
+	width: 450px;
 }
 .ColumnaDos {
 	display: inline-block;
 	float: left;
-	width: 250px;	
+	width: 50%;
+	overflow: hidden;
+	font: 15px Sans-serif;
+	margin-left:10px; 
+	margin-top:10px; 
+	background-color: #ccc;
+	
 }
 .ContenedorAbecedario{
 	margin: 20px auto;
@@ -90,11 +108,15 @@ h5, .Resultado {
     
 }
 /*Sopa de letras*/
+.Contestada{
+	color: #04B431;
+}
 .ContenedorSopa{
+
 	
-	margin: 0px auto;
+	
     padding: 0;
-    width: 650px;
+    width: 450px;
     overflow: hidden;
 }
 
@@ -123,11 +145,12 @@ h5, .Resultado {
 	font: normal 15px Arial;
 	height: 15px;
 	line-height: 100%;
-	padding: 4px 0 0;
+	padding: 6px 0 0;
 	text-align: center;
     text-decoration: none;
 	vertical-align: middle;	
-	width: 30px;
+	width: 15px;
+	
 }
 .ContenedorSopa > ul > li > a:hover{
 	background: #000;
@@ -150,13 +173,13 @@ h5, .Resultado {
     color: #CCC;
 	display: inline-block;
 	font: normal 15px Arial;
-	height: 15px;
+	height: 20px;
 	line-height: 100%;
 	padding: 6px 0 0;
 	text-align: center;
     text-decoration: none;
 	vertical-align: middle;	
-	width: 30px;
+	width: 20px;
 }
 .ContenedorSopa > ul.Azul > li > a:hover{
 	background: #FF0000;
