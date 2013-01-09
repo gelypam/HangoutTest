@@ -125,8 +125,10 @@ function rellena(sopa){
 function dibujaSopa(sopa){
 	laSopa = "";
 	for (i = 0; i < 13; i++) {
+		laFila = '';
 		for (j = 0; j <20; j++) {
-		laSopa += "<li><a id='"+(i.toString())+"_"+(j.toString())+"'>"+sopa[i][j]+"</a></li>";		
+			laSopa += "<li><a id='"+(i.toString())+"_"+(j.toString())+"'>"+sopa[i][j]+"</a></li>";		
+			laFila += sopa[i][j] + ',';	
 		};
 		gapi.hangout.data.setValue(kFILA+i,laFila);
 	}			
