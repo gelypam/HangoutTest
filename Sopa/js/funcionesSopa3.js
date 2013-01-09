@@ -221,7 +221,7 @@ function validaPalabra(ob){
     				s += elid + ",";    				
     			}
     			else{
-    				for(int i=0; i < seleccionados.length; i++){
+    				for(var i=0; i < seleccionados.length; i++){
     					s += seleccionados[i] + ",";    				
     				}
     			}
