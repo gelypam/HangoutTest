@@ -668,7 +668,7 @@ function onStateChange() {
 				f = gapi.hangout.data.getValue(kSTATE+n);
 				console.log("gapiFILA: "+ f);	      				
 				ss[n] = f.split(",");
-				console.log(ss[i]);
+				console.log(ss[n]);
 				n++;
 			}
 		}
@@ -690,12 +690,7 @@ function onStateChange() {
 		}
 		respuestas = ss;
 	}
-
-	if(kSTATE == kRESULTADOS){
-		for(var i=0; i < resultados; i++){
-			console.log(resultados[i]);
-		}
-	}
+	
 
 	if(kSTATE == kRESULTADOS){
 		f = gapi.hangout.data.getValue(kPREGUNTAS);
@@ -728,14 +723,17 @@ function onStateChange() {
 
 	if(kSTATE == kSELECCIONADOS){
 		f = gapi.hangout.data.getValue(kSELECCIONADOS);
+		console.log(f);
 		if(f){
 			ss = f.split();
 			ss.pop();
 			for(var i=1; i < ss.length; i++){
 				var x = $("#" + ss[i])
+				console.log("seleccionados: " + ss)
 				validaPalabra(x);  
 			}
 		}	
+		//seleccionados = ss;
 	}
  }
 
