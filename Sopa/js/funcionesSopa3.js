@@ -753,7 +753,7 @@ gapi.hangout.onApiReady.add(function(eventObj)
 	      		stateToMatrix(kFILA);
 	      		stateToMatrix(kRESPUESTA_FILA);
 	      		stateToMatrix(kRESULTADOS);
-	      		stateToMatrix(kSELECCIONADO)
+	      		stateToMatrix(kSELECCIONADOS)
 
 	        }
 	        else{
