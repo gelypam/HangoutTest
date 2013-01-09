@@ -697,7 +697,7 @@ function onStateChange() {
 		preguntas = f.split("/,/");
 		preguntas.pop();
 
-		for(var i; i < preguntas.length; i++){
+		for(var i=0; i < preguntas.length; i++){
 	  		//Genero los números del 1 al 10 que mostrarán cada pregunta
 	  		var numeros = '<button type="button" id="'+i+'"><b>'+(i + 1)+'</b></button>';
 		  	$("#botones").append(numeros);
