@@ -724,7 +724,7 @@ function onStateChange() {
 	if(kSTATE == kSELECCIONADOS){
 		f = gapi.hangout.data.getValue(kSELECCIONADOS);
 		console.log(f);
-		if(f.length>1){
+		if(f){
 			ss = f.split();
 			ss.pop();
 			for(var i=1; i < ss.length; i++){
