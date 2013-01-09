@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Module>
+  <ModulePrefs title="Your App Name">
+    <Require feature="rpc"/>
+    <Require feature="views"/>
+  </ModulePrefs>
+  <Content type="html">
+    <![CDATA[
+
+      <!-- PRODUCCION -->
+      <script src="//talkgadget.google.com/hangouts/_/api/hangout.js?v=1.2"></script>
+     
+      <!-- DESARROLLO 
+      <script src="//hangoutsapi.talkgadget.google.com/hangouts/_/api/hangout.js?v=1.2"></script>
+      -->
+      
+      <link rel="stylesheet" type="text/css" href="https://raw.github.com/gelypam/HangoutTest/master/Sopa/css/estilos.css" />  
+      <script type="text/javascript" src="https://raw.github.com/gelypam/HangoutTest/master/Sopa/js/jquery-1.7.1.min.js"></script>
+      <script type="text/javascript" src="https://raw.github.com/gelypam/HangoutTest/master/Sopa/js/funcionesSopa3.js"></script>
+
+     
+
+
+      <!-- application code -->
+      <div class="principal">
+        <div class="JuegoAhorcado">
+          <div class="ContenedorJuego">
+            <div id="botones"></div>
+            <div id="preguntas"></div>
+            <div class="ColumnaUno">
+              
+              <div id="ContenedorSopa" class="ContenedorSopa">            
+                <ul class="Azul" id="letras"></ul>            
+              </div>
+              <div class="Palabra" id="Palabra"></div>
+            </div>
+            
+          </div>
+          <div id="resultado" class="Resultado" style="display:none;"></div>  
+        </div>
+      </div>
+    ]]>
+  </Content>
+</Module>
