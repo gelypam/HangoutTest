@@ -704,7 +704,7 @@ function onStateChange() {
 	}
 
 	if(kSTATE == kRESULTADOS){
-		f = gapi.hangout.getValue(kPREGUNTAS);
+		f = gapi.hangout.data.getValue(kPREGUNTAS);
 		preguntas = f.split(",");
 		preguntas.pop();
 
@@ -726,7 +726,7 @@ function onStateChange() {
 	  		});
 	  	}
 
-	  	f = gapi.hangout.getValue(kRESULTADOS);
+	  	f = gapi.hangout.data.getValue(kRESULTADOS);
   		resultados = f.split(",");
   		resultados.pop();
 	  		
