@@ -595,6 +595,7 @@ function PreguntaContestada(i){
 
 /*-----SECCION PARA HANGOUT ------*/
 function onStateChange() {
+	console.log(" - onStateChange function"); 
 	var s = $("#" + gapi.hangout.data.getValue(kSELECCIONADO))
 	if(s){
 		console.log(s+" - onStateChange function");  
