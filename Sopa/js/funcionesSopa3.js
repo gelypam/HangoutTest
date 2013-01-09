@@ -1,20 +1,24 @@
 var sopa = [];
 var respuestas = new Array ();
 var revisarRes = new Array ();
+var preguntas = new Array();
+var resultados = new Array();
 var seleccionados = ["--->"];
 var numPalabras=0;
 var aciertos=0;
+
 
 /*VARIABLES GAPI.HANGOUT.DATA*/
 var kSELECCIONADO = 'selected';
 var kCONTADOR_PALABRA = 'contador_palabra';
 var kPALABRA_ENCONTRADA = 'palabra_encontrada';
 var kACIERTOS = 'aciertos';
-var kCLICKEADOS = 'clickeados';
+var kSELECCIONADOS = 'seleccionados';
 var kSOPA = 'sopa';
 var kFILA = 'fila';
 var kRESPUESTA_FILA = 'respuesta_fila';
 var kRESULTADOS = 'resultados';
+var kPREGUNTAS = 'preguntas';
 
 //***********************************+//
 //Esta variable es un arreglo con número de la preguntas/palabras que ya se encontraron en la sopa de letras
@@ -83,6 +87,7 @@ function startApp(){
 		var result = "";
 		for(var i=0; i < resultados.length; i++){
 			result += resultados[i] + ",";
+			gapi.hangout.data.setValue(kRESULTADOS, result);
 		}
 
 
@@ -207,7 +212,22 @@ function validaPalabra(ob){
             if (!esta) {
     			
     			seleccionados.push(elid);
+
+    			/*...inicia fragmento hangout ...*/
     			gapi.hangout.data.setValue(kSELECCIONADO,elid);
+    			var s = "";
+    			s = gapi.hangout.data.getValue(kSELECCIONADOS);
+    			if(s){
+    				s += elid + ",";    				
+    			}
+    			else{
+    				for(int i=0; i < seleccionados.length; i++){
+    					s += seleccionados[i] + ",";    				
+    				}
+    			}
+    			gapi.hangout.data.setValue(kSELECCIONADOS,s);
+    			/*...termina fragmento hangout ...*/
+
 
     			cc= new Array(10);
     			cc[0]=0;
@@ -581,10 +601,8 @@ function acomodaPalabras(sopa, respuestas, palabra){
 }
 
 //Funciones para mostrar los botones para las 10 preguntas
-var preguntas = new Array();
-var resultados = new Array();
 function CargaPreguntas(){
-	//Recupero una pregunta aleatoria de la BD
+	//Recupero las preguntas aleatorias de la BD
 	$.getJSON('http://metaversoeducativo.net/sisFH/msicu/php/servicioPreguntasSopa.php', function(data) {
 	  	$.each(data.temario, function(indice, valor) {
 	  		preguntas[indice] = valor.pregunta;
@@ -624,7 +642,7 @@ function PreguntaContestada(i){
 }
 
 
-
+/*-----SECCION PARA HANGOUT ------*/
 function onStateChange() {
 	var s = $("#" + gapi.hangout.data.getValue(kSELECCIONADO))
 	if(s){
@@ -636,13 +654,14 @@ function onStateChange() {
  function stateToMatrix(kSTATE){
  	var ss = [];
 	var n = 0;
+	var f = "";
 	var filas = gapi.hangout.data.getKeys();
 	console.log("entro en SOPITA " + filas.length);	 
 
 	if(kSTATE == kFILA){	
 		for(var i=0; i < filas.length; i++){	      			      			
 			if((filas[i].substring(0,4)) == kFILA){
-				var f = gapi.hangout.data.getValue(kSTATE+n);
+				f = gapi.hangout.data.getValue(kSTATE+n);
 				console.log("gapiFILA: "+ f);	      				
 				ss[n] = f.split(",");
 				console.log(ss[i]);
@@ -656,7 +675,7 @@ function onStateChange() {
 		
 		for(var i=0; i < filas.length; i++){
 			if((filas[i].substring(0,14)) == kRESPUESTA_FILA){
-				var f = gapi.hangout.data.getValue(kRESPUESTA_FILA+n);		
+				f = gapi.hangout.data.getValue(kRESPUESTA_FILA+n);		
 				console.log("gapiFILA: "+ f);
 				ss[n]= new Array(2);	
 				ss[n][0] = n+1;
@@ -674,7 +693,43 @@ function onStateChange() {
 		}
 	}
 
-	
+	if(kSTATE == kRESULTADOS){
+		f = gapi.hangout.getValue(kPREGUNTAS);
+		preguntas = f.split(",");
+		preguntas.pop();
+
+		for(var i; i < preguntas.length; i++){
+	  		//Genero los números del 1 al 10 que mostrarán cada pregunta
+	  		var numeros = '<button type="button" id="'+i+'"><b>'+(i + 1)+'</b></button>';
+		  	$("#botones").append(numeros);
+
+	  		$("#"+i).on("click",function(){
+	  			if ( ($("#"+i).hasClass('Contestada')) ) {
+	  				
+	  				$("#preguntas").empty();
+					$("#preguntas").append("Palabra encontrada: " + resultados[i]);	
+	  			}
+	  			else{
+	  				MuestraPregunta(this.id);	
+	  			}
+	  			
+	  		});
+	  	}
+
+	  	f = gapi.hangout.getValue(kRESULTADOS);
+  		resultados = f.split(",");
+  		resultados.pop();
+	  		
+	}
+
+	if(kSTATE == kSELECCIONADOS){
+		f = gapi.hangout.data.getValue(kSELECCIONADOS);
+		ss = f.split();
+		ss.pop();
+		for(var i=1; i < ss.length; i++){
+			validaPalabra(ss[i]);  
+		}
+	}
  }
 
 gapi.hangout.onApiReady.add(function(eventObj) 
@@ -688,12 +743,12 @@ gapi.hangout.onApiReady.add(function(eventObj)
 	      		stateToMatrix(kFILA);
 	      		stateToMatrix(kRESPUESTA_FILA);
 	      		stateToMatrix(kRESULTADOS);
+	      		stateToMatrix(kSELECCIONADO)
+
 	        }
 	        else{
+
 	        	startApp();
-	        	
-
-
 	        }
 	    } 
 	  }
@@ -705,3 +760,5 @@ gapi.hangout.onApiReady.add(function(eventObj)
 
 
 gapi.hangout.data.onStateChanged.add(onStateChange);
+
+/*----------------------------*/
