@@ -726,7 +726,7 @@ function onStateChange() {
 		console.log(f);
 		if(f){
 			console.log("entró quish quissh quissssh")
-			ss = f.split();
+			ss = f.split(",");
 			ss.pop();
 			console.log("1eleccionados: " + ss)
 			for(var i=1; i < ss.length; i++){
