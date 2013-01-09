@@ -728,9 +728,10 @@ function onStateChange() {
 			console.log("entró quish quissh quissssh")
 			ss = f.split();
 			ss.pop();
+			console.log("1eleccionados: " + ss)
 			for(var i=1; i < ss.length; i++){
 				var x = $("#" + ss[i])
-				console.log("seleccionados: " + ss)
+				console.log("2seleccionados: " + ss)
 				validaPalabra(x);  
 			}
 		}	
