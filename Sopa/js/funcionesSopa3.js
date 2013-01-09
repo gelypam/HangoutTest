@@ -732,7 +732,8 @@ function onStateChange() {
 			ss = f.split();
 			ss.pop();
 			for(var i=1; i < ss.length; i++){
-				validaPalabra(ss[i]);  
+				var x = $("#" + ss[i])
+				validaPalabra(x);  
 			}
 		}	
 	}
