@@ -83,12 +83,12 @@ function startApp(){
 		acomodaPalabras(sopa, respuestas, w9);
 		acomodaPalabras(sopa, respuestas, w10);
 		
-		/*...inicia segmento de hangout*/
+		/*...inicia fragmento de hangout*/
 
 		//recupera preguntas[] para guardarlo en los shared states
 		var preg = "";
 		for(var i=0; i < preguntas.length; i++){
-			preg += preguntas[i] + ",";			
+			preg += preguntas[i] + "/,/";			
 		}
 		gapi.hangout.data.setValue(kPREGUNTAS,preg);
 
@@ -111,7 +111,7 @@ function startApp(){
 			gapi.hangout.data.setValue(kRESPUESTA_FILA+i, rfila);
 		}
 
-		/*termina segmento de hangout*/
+		/*...termina fragmento de hangout...*/
 
 		//*****************************************************+//
 
@@ -225,17 +225,11 @@ function validaPalabra(ob){
 
     			/*...inicia fragmento hangout ...*/
     			gapi.hangout.data.setValue(kSELECCIONADO,elid);
-    			var s = "";
-    			s = gapi.hangout.data.getValue(kSELECCIONADOS);
-    			if(s){
-    				s += elid + ",";    				
-    			}
-    			else{
-    				for(var i=0; i < seleccionados.length; i++){
-    					s += seleccionados[i] + ",";    				
-    				}
-    			}
-    			gapi.hangout.data.setValue(kSELECCIONADOS,s);
+    			var s = "";    			    			
+				for(var i=0; i < seleccionados.length; i++){
+					s += seleccionados[i] + ",";    				
+				}   				    			
+				gapi.hangout.data.setValue(kSELECCIONADOS,s);
     			/*...termina fragmento hangout ...*/
 
 
@@ -705,7 +699,7 @@ function onStateChange() {
 
 	if(kSTATE == kRESULTADOS){
 		f = gapi.hangout.data.getValue(kPREGUNTAS);
-		preguntas = f.split(",");
+		preguntas = f.split("/,/");
 		preguntas.pop();
 
 		for(var i; i < preguntas.length; i++){
@@ -734,11 +728,13 @@ function onStateChange() {
 
 	if(kSTATE == kSELECCIONADOS){
 		f = gapi.hangout.data.getValue(kSELECCIONADOS);
-		ss = f.split();
-		ss.pop();
-		for(var i=1; i < ss.length; i++){
-			validaPalabra(ss[i]);  
-		}
+		if(f){
+			ss = f.split();
+			ss.pop();
+			for(var i=1; i < ss.length; i++){
+				validaPalabra(ss[i]);  
+			}
+		}	
 	}
  }
 
