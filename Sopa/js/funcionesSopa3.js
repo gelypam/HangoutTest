@@ -83,13 +83,21 @@ function startApp(){
 		acomodaPalabras(sopa, respuestas, w9);
 		acomodaPalabras(sopa, respuestas, w10);
 		
+		/*...inicia segmento de hangout*/
+
+		//recupera preguntas[] para guardarlo en los shared states
+		var preg = "";
+		for(var i=0; i < preguntas.length; i++){
+			preg += preguntas[i] + ",";			
+		}
+		gapi.hangout.data.setValue(kPREGUNTAS,preg);
+
 		//recupera resultados[] para guardarlo en los shared states
 		var result = "";
 		for(var i=0; i < resultados.length; i++){
-			result += resultados[i] + ",";
-			gapi.hangout.data.setValue(kRESULTADOS, result);
+			result += resultados[i] + ",";			
 		}
-
+		gapi.hangout.data.setValue(kRESULTADOS, result);
 
 		//recupera respuestas[] para guardarlo en los shared states
 		console.log(respuestas.length);
@@ -102,7 +110,9 @@ function startApp(){
 			}
 			gapi.hangout.data.setValue(kRESPUESTA_FILA+i, rfila);
 		}
-		
+
+		/*termina segmento de hangout*/
+
 		//*****************************************************+//
 
 		//Comenta esta función si sólo quieres ver las 10 palabras que están dentro de la sopa de letras
