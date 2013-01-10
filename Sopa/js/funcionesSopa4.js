@@ -683,6 +683,7 @@ function onStateChange() {
 
 	if(kSTATE == kCONTESTADAS){
 		f = gapi.hangout.data.getValue(kCONTESTADAS);
+		console.log(f);
 		if(f){
 			ss = f.split(",");
 			ss.pop();
@@ -691,6 +692,8 @@ function onStateChange() {
 				preguntasContestadas[i] = parseInt(ss[i]);
 			}
 
+			console.log("ss: " + ss);
+			console.log(ss);
 
 			for(var i=0; i < ss.length; i++){		
 				var ind = parseInt(ss[i]);
