@@ -230,10 +230,16 @@ function validaPalabra(ob){
     								
     								$('#pre' + j).css("visibility","visible");
 
-									var pregCont = '';
+									var back = gapi.hangout.data.getValue(kCONTESTADAS);
+									if(!back)
+										var pregCont = '';
+									else
+										var pregCont = back;
     								for (var i = 0; i < preguntasContestadas.length; i++) {
     									//alert ( preguntasContestadas[i]);
-    									pregCont += preguntasContestadas[i] + ",";    									
+    									preguntasContestadas.splice(preguntasContestadas.indexOf(respuestas[j][0]);
+    									pregCont += preguntasContestadas[i] + ",";
+
     								};
     								gapi.hangout.data.setValue(kCONTESTADAS, pregCont);
     								
@@ -687,11 +693,17 @@ function onStateChange() {
 			ss = f.split(",");
 			ss.pop();
 
-			for(var i=0; i < ss.length; i++){
-				PreguntaContestada(ss[i]);
+			for(var i=0; i < ss.length; i++){		
+				var ind = parseInt(ss[i]);
+				//PreguntaContestada(ind);
+				for(var j=0; j < respuestas[ind-1][1]; j++){
+					var x = $("#" + respuestas[ind-1][1][j]);
+					validaPalabra(x);  
+				}
+
 			}
 
-			preguntasContestadas = ss;
+			//preguntasContestadas = ss;
 		}
 
 	}
