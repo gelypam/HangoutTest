@@ -7,12 +7,12 @@
   <Content type="html">
     <![CDATA[
 
-      <!-- PRODUCCION 
+      <!-- PRODUCCION -->
       <script src="//talkgadget.google.com/hangouts/_/api/hangout.js?v=1.2"></script>
-     -->
-      <!-- DESARROLLO -->
+     
+      <!-- DESARROLLO 
       <script src="//hangoutsapi.talkgadget.google.com/hangouts/_/api/hangout.js?v=1.2"></script>
-      
+      -->
       
       <link rel="stylesheet" type="text/css" href="https://raw.github.com/gelypam/HangoutTest/master/Sopa/css/estilos.css" />  
       <script type="text/javascript" src="https://raw.github.com/gelypam/HangoutTest/master/Sopa/js/jquery-1.7.1.min.js"></script>
