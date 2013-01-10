@@ -683,14 +683,16 @@ function onStateChange() {
 
 	if(kSTATE == kCONTESTADAS){
 		f = gapi.hangout.data.getValue(kCONTESTADAS);
-		ss = f.split(",");
-		ss.pop();
+		if(f){
+			ss = f.split(",");
+			ss.pop();
 
-		for(var i=0; i < ss.length; i++){
-			PreguntaContestada(ss[i]);
+			for(var i=0; i < ss.length; i++){
+				PreguntaContestada(ss[i]);
+			}
+
+			preguntasContestadas = ss;
 		}
-
-		preguntasContestadas = ss;
 
 	}
  }
