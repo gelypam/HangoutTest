@@ -95,7 +95,7 @@ function startApp(){
 		//*****************************************************+//
 
 		//Comenta esta función si sólo quieres ver las 10 palabras que están dentro de la sopa de letras
-		//rellena(sopa);
+		rellena(sopa);
 		dibujaSopa(sopa);	
 		
 
@@ -145,7 +145,7 @@ function dibujaSopa(sopa){
 
 //Función que se manda a llamar cada que das clic a una letra.  Verifica que la letra pertenezca a una palabra
 function validaPalabra(ob){
-	conosole.log(ob);
+	console.log(ob);
 	ob.addClass("Usado");
 	$("#letras li a").each(function () {
 		
@@ -695,7 +695,6 @@ function onStateChange() {
 			for(var i=0; i < ss.length; i++){		
 				var ind = parseInt(ss[i]);
 				//PreguntaContestada(ind);
-				console.log(ind +","+respuestas[ind-1][1]);
 				for(var j=0; j < respuestas[ind-1][1]; j++){
 					var x = $("#" + respuestas[ind-1][1][j]);
 					console.log(x);
