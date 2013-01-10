@@ -698,7 +698,7 @@ function onStateChange() {
 				var ind = parseInt(ss[i]);
 				//PreguntaContestada(ind);
 				console.log(respuestas[ind-1][1]);
-				for(var j=0; j < respuestas[ind-1][1]; j++){
+				for(var j=0; j < respuestas[ind-1][1].length; j++){
 					var x = $("#" + respuestas[ind-1][1][j]);
 					console.log(x);
 					validaPalabra(x);  
