@@ -131,12 +131,14 @@ function dibujaSopa(sopa){
 			laFila += sopa[i][j] + ',';	
 		};
 		gapi.hangout.data.setValue(kFILA+i,laFila);
-	}			
+	}
+	console.log("dibujaSopa");
+	gapi.hangout.data.setValue(kSOPA,'true');
+	console.log(kSOPA);
+
 	$("#letras").append(laSopa);
-	$("#letras li a").on("click", function(){
-		
-		
-		validaPalabra($(this));
+	$("#letras li a").on("click", function(){		
+	validaPalabra($(this));
 	});
 }
 
