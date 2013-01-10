@@ -692,12 +692,12 @@ function onStateChange() {
 				preguntasContestadas[i] = parseInt(ss[i]);
 			}
 
-			console.log("ss: " + ss);
-			console.log(ss);
+			console.log("ss: " + ss);			
 
 			for(var i=0; i < ss.length; i++){		
 				var ind = parseInt(ss[i]);
 				//PreguntaContestada(ind);
+				console.log(respuestas[ind-1][1]);
 				for(var j=0; j < respuestas[ind-1][1]; j++){
 					var x = $("#" + respuestas[ind-1][1][j]);
 					console.log(x);
