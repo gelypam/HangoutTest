@@ -224,6 +224,7 @@ function validaPalabra(ob){
     								console.log("PALABRA ENCONTRADA");
     								aciertos ++;
     								
+    								/* ... inicia segmento hangout ... */
 									if(!preguntasContestadas.indexOf(respuestas[j][0]) >= 0 ){
 										preguntasContestadas.push(respuestas[j][0]);
 										var pregCont = "";
@@ -233,7 +234,7 @@ function validaPalabra(ob){
     									};	
 										gapi.hangout.data.setValue(kCONTESTADAS, pregCont);
 									}
-    								
+    								/*... termina segmento hangout...*/
 
     								PreguntaContestada(j);
     								
@@ -609,6 +610,11 @@ function onStateChange() {
 	}
 };
 
+function letraBien(ob){	
+	$(ob).removeClass();
+	$(ob).addClass("Bien");		
+}
+
  function stateToMatrix(kSTATE){
  	var ss = [];
 	var n = 0;
@@ -696,13 +702,15 @@ function onStateChange() {
 
 			for(var i=0; i < ss.length; i++){		
 				var ind = parseInt(ss[i]);
-				//PreguntaContestada(ind);
+				PreguntaContestada(i);
+				$('#pre' + i).css("visibility","visible");
 				console.log(respuestas[ind-1][1]);
 				for(var j=0; j < respuestas[ind-1][1].length; j++){
 					var x = $("#" + respuestas[ind-1][1][j]);
 					console.log(x);
-					validaPalabra(x);  
-				}
+					letraBien(x); 
+
+				}								
 
 			}
 
