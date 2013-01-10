@@ -223,25 +223,27 @@ function validaPalabra(ob){
     								console.log("PALABRA ENCONTRADA");
     								aciertos ++;
     								
-
-    								preguntasContestadas.push(respuestas[j][0]);
+									if(!preguntasContestadas.indexOf(respuestas[j][0])){
+										preguntasContestadas.push(respuestas[j][0]);
+										var pregCont = "";
+										for (var m = 0; m < preguntasContestadas.length; m++) {
+    										//alert ( preguntasContestadas[i]);  		
+    										pregCont += preguntasContestadas[m] + ",";
+    									};	
+										gapi.hangout.data.setValue(kCONTESTADAS, pregCont);
+									}
+    								
 
     								PreguntaContestada(j);
     								
     								$('#pre' + j).css("visibility","visible");
 
-									var back = gapi.hangout.data.getValue(kCONTESTADAS);
-									if(!back)
-										var pregCont = '';
-									else
-										var pregCont = back;
-    								for (var i = 0; i < preguntasContestadas.length; i++) {
-    									//alert ( preguntasContestadas[i]);
-    									preguntasContestadas.splice(preguntasContestadas.indexOf(respuestas[j][0]);
-    									pregCont += preguntasContestadas[i] + ",";
 
-    								};
-    								gapi.hangout.data.setValue(kCONTESTADAS, pregCont);
+
+									
+
+    								
+    								
     								
 
 
@@ -693,6 +695,11 @@ function onStateChange() {
 			ss = f.split(",");
 			ss.pop();
 
+			for(var i=0; i < ss.length; i++){
+				preguntasContestadas[i] = parseInt(ss[i]);
+			}
+
+
 			for(var i=0; i < ss.length; i++){		
 				var ind = parseInt(ss[i]);
 				//PreguntaContestada(ind);
@@ -703,7 +710,7 @@ function onStateChange() {
 
 			}
 
-			//preguntasContestadas = ss;
+			
 		}
 
 	}
