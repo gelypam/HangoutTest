@@ -223,7 +223,7 @@ function validaPalabra(ob){
     								console.log("PALABRA ENCONTRADA");
     								aciertos ++;
     								
-									if(!preguntasContestadas.indexOf(respuestas[j][0])){
+									if(preguntasContestadas.indexOf(respuestas[j][0]) >= 0 ){
 										preguntasContestadas.push(respuestas[j][0]);
 										var pregCont = "";
 										for (var m = 0; m < preguntasContestadas.length; m++) {
@@ -237,15 +237,6 @@ function validaPalabra(ob){
     								PreguntaContestada(j);
     								
     								$('#pre' + j).css("visibility","visible");
-
-
-
-									
-
-    								
-    								
-    								
-
 
     								for (var l = 0; l < revisarRes[j].length; l++) {
     									console.log("tamaño palabra "+ j+": "+revisarRes[j].length);
