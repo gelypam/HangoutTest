@@ -231,7 +231,9 @@ function validaPalabra(ob){
 
     								for (var i = 0; i < preguntasContestadas.length; i++) {
     									//alert ( preguntasContestadas[i]);
+    									var pregCont += preguntasContestadas[i] + ",";    									
     								};
+    								gapi.hangout.data.setValue(kCONTESTADAS, pregCont);
     								
 
 
@@ -596,11 +598,11 @@ function PreguntaContestada(i){
 
 
 /*-----SECCION PARA HANGOUT ------*/
-function onStateChange() {
-	console.log(" - onStateChange function"); 
+function onStateChange() {	
 	var s = $("#" + gapi.hangout.data.getValue(kSELECTED))
-	if(s){
-		console.log(s+" - onStateChange function");  
+	console.log(s+" - onStateChange function");  
+	if(s){		
+		console.log("validaPalabra(" + s +") - onStateChange function"); 
 		validaPalabra(s);  
 	}
 };
@@ -647,27 +649,16 @@ function onStateChange() {
 		preguntas = f.split("/,/");
 		preguntas.pop();
 
-		for(var i=0; i < preguntas.length; i++){
-	  		//Genero los números del 1 al 10 que mostrarán cada pregunta
-	  		var numeros = '<button type="button" id="'+i+'"><b>'+(i + 1)+'</b></button>';
-		  	$("#botones").append(numeros);
-
-	  		$("#"+i).on("click",function(){
-	  			if ( ($("#"+i).hasClass('Contestada')) ) {
-	  				
-	  				$("#preguntas").empty();
-					$("#preguntas").append("Palabra encontrada: " + resultados[i]);	
-	  			}
-	  			else{
-	  				MuestraPregunta(this.id);	
-	  			}
-	  			
-	  		});
-	  	}
-
-	  	f = gapi.hangout.data.getValue(kRESULTADOS);
+		f = gapi.hangout.data.getValue(kRESULTADOS);
   		resultados = f.split(",");
   		resultados.pop();
+
+		for(var i=0; i < preguntas.length; i++){
+	  		//Genero los números del 1 al 10 que mostrarán cada pregunta
+	  		MuestraPregunta(i);
+	  	}
+
+	  	
 	  		
 	}
 
@@ -687,6 +678,19 @@ function onStateChange() {
 		}	
 		//seleccionados = ss;
 	}
+
+	if(kSTATE == kCONTESTADAS){
+		f = gapi.hangout.data.getValue(kCONTESTADAS);
+		ss = f.split(",");
+		ss.pop();
+
+		for(var i=0; i < ss.length; i++){
+			PreguntaContestada(ss[i]);
+		}
+
+		preguntasContestadas = ss;
+
+	}
  }
 
 gapi.hangout.onApiReady.add(function(eventObj) 
@@ -695,12 +699,15 @@ gapi.hangout.onApiReady.add(function(eventObj)
 	try { 
 	    if (eventObj.isApiReady) { 
 	      console.log("isApiReady"); 
-	      if(SOPITA){	    
-	      		
+	      if(SOPITA){	    	      		
+
 	      		stateToMatrix(kFILA);
 	      		stateToMatrix(kRESPUESTA_FILA);
 	      		stateToMatrix(kRESULTADOS);
 	      		stateToMatrix(kSELECCIONADOS)
+	      		if(kCONTESTADAS){
+	      			stateToMatrix(kCONTESTADAS)
+	      		}
 
 	        }
 	        else{
