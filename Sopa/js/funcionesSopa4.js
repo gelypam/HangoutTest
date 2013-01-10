@@ -15,6 +15,7 @@ var kRESULTADOS = 'resultados';
 var kPREGUNTAS = 'preguntas';
 var kSELECCIONADOS = 'seleccionados';
 var kSELECTED = 'selected';
+var kCONTESTADAS = 'contestadas';
 
 //***********************************+//
 //Esta variable es un arreglo con número de la preguntas/palabras que ya se encontraron en la sopa de letras
@@ -229,9 +230,10 @@ function validaPalabra(ob){
     								
     								$('#pre' + j).css("visibility","visible");
 
+									var pregCont = '';
     								for (var i = 0; i < preguntasContestadas.length; i++) {
     									//alert ( preguntasContestadas[i]);
-    									var pregCont += preguntasContestadas[i] + ",";    									
+    									pregCont += preguntasContestadas[i] + ",";    									
     								};
     								gapi.hangout.data.setValue(kCONTESTADAS, pregCont);
     								
