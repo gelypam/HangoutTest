@@ -702,6 +702,8 @@ function letraBien(ob){
 
 			for(var i=0; i < ss.length; i++){		
 				var ind = parseInt(ss[i]);
+				console.log(ind);
+				console.log(ind-1);
 				PreguntaContestada(ind-1);
 				$('#pre' + ind-1).css("visibility","visible");
 				console.log(respuestas[ind-1][1]);
