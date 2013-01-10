@@ -702,13 +702,14 @@ function letraBien(ob){
 
 			for(var i=0; i < ss.length; i++){		
 				var ind = parseInt(ss[i]);
+				var ind2 = ind - 1;
 				console.log(ind);
 				console.log(ind-1);
-				PreguntaContestada(ind-1);
-				$('#pre' + ind-1).css("visibility","visible");
-				console.log(respuestas[ind-1][1]);
-				for(var j=0; j < respuestas[ind-1][1].length; j++){
-					var x = $("#" + respuestas[ind-1][1][j]);
+				PreguntaContestada(ind2);
+				$('#pre' + ind2).css("visibility","visible");
+				console.log(respuestas[ind2][1]);
+				for(var j=0; j < respuestas[ind2][1].length; j++){
+					var x = $("#" + respuestas[ind2][1][j]);
 					console.log(x);
 					letraBien(x); 
 
