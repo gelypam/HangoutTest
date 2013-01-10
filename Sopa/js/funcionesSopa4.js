@@ -145,6 +145,7 @@ function dibujaSopa(sopa){
 
 //Función que se manda a llamar cada que das clic a una letra.  Verifica que la letra pertenezca a una palabra
 function validaPalabra(ob){
+	conosole.log(ob);
 	ob.addClass("Usado");
 	$("#letras li a").each(function () {
 		
@@ -694,8 +695,10 @@ function onStateChange() {
 			for(var i=0; i < ss.length; i++){		
 				var ind = parseInt(ss[i]);
 				//PreguntaContestada(ind);
+				console.log(ind +","+respuestas[ind-1][1]);
 				for(var j=0; j < respuestas[ind-1][1]; j++){
 					var x = $("#" + respuestas[ind-1][1][j]);
+					console.log(x);
 					validaPalabra(x);  
 				}
 
@@ -713,7 +716,8 @@ gapi.hangout.onApiReady.add(function(eventObj)
 	try { 
 	    if (eventObj.isApiReady) { 
 	      console.log("isApiReady"); 
-	      if(SOPITA){	    	      		
+	      if(SOPITA){	
+	      		gapi.hangout.data.setValue(kSELECTED, "");
 
 	      		stateToMatrix(kFILA);
 	      		stateToMatrix(kRESPUESTA_FILA);
