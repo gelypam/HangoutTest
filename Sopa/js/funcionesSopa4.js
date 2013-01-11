@@ -95,7 +95,7 @@ function startApp(){
 		//*****************************************************+//
 
 		//Comenta esta función si sólo quieres ver las 10 palabras que están dentro de la sopa de letras
-		//rellena(sopa);
+		rellena(sopa);
 		dibujaSopa(sopa);	
 		
 
